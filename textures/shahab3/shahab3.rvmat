@@ -1,12 +1,12 @@
 #define _ARMA_
 
 //Class air_f_beta : HellAngel\Data\Camo.rvmat{
-			/*
-			class StageTI
+
+class StageTI
 			{
-				texture = "HellAngel\Data\Camo_ti_ca.paa";
+				texture = "Ballistic_missiles\textures\shahab3\shahab3.paa";
 			};
-			*/
+
 Ambient[]={1,1,1,1};
 Diffuse[]={1,1,1,1};
 ForcedDiffuse[]={0,0,0,0}; 
