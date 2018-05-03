@@ -1,3 +1,4 @@
+allTILKBallisticMissiles[]={"shahab3","iskander_9K720"};//ajouter les noms de classe de tes missiles ici si tu en crées de nouveaux
 class Wreck_base_F;
 
 class shahab3: Wreck_base_F {
@@ -52,6 +53,7 @@ class shahab3: Wreck_base_F {
 	windSockExist = 0;
 	countsForScoreboard = 0;
 	class EventHandlers {
+		init = "_this call TILK_fnc_ignition;";
 		class CBA_Extended_EventHandlers {};
 	};
 	
@@ -109,6 +111,7 @@ class iskander_9K720: Wreck_base_F {
 	windSockExist = 0;
 	countsForScoreboard = 0;
 	class EventHandlers {
+		init = "_this call TILK_fnc_ignition;";
 		class CBA_Extended_EventHandlers {};
 	};
 	
