@@ -1,5 +1,3 @@
-
-
 #define _ARMA_
 
 //Class air_f_beta : HellAngel\Data\Camo.rvmat{
@@ -78,8 +76,8 @@ class Stage5
 	uvSource = "tex";
 	class uvTransform
 	{
-		aside[] = {1,0,0};
-		up[] = {0,1,0};
+		aside[] = {5,0,0};
+		up[] = {0,5,0};
 		dir[] = {0,0,1};
 		pos[] = {0,0,1};
 	};
