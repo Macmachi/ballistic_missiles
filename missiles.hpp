@@ -1,6 +1,8 @@
 allTILKBallisticMissiles[]={"shahab3","iskander_9K720"};//ajouter les noms de classe de tes missiles ici si tu en crées de nouveaux
 class Wreck_base_F;
 
+/* Shahab 3 */
+
 class shahab3: Wreck_base_F {
 	author = "TILK";
 	mapSize = 7.53;
@@ -58,6 +60,7 @@ class shahab3: Wreck_base_F {
 	};
 	
 };
+/* Iskander_9K720 */
 
 class iskander_9K720: Wreck_base_F {
 	author = "TILK";
@@ -70,7 +73,7 @@ class iskander_9K720: Wreck_base_F {
 		verticalOffsetWorld = 0;
 		init = "''";
 	};
-	editorPreview = "\Ballistic_missiles\icons\shahab3_icon.paa";
+	editorPreview = "\Ballistic_missiles\icons\iskander_9K720_icon.paa";
 	//_generalMacro = "Land_Wreck_BMP2_F";
 	scope = 2;
 	scopeCurator = 2;

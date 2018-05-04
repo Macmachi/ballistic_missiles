@@ -6,7 +6,7 @@ class CfgPatches {
         }; 
         weapons[] = {}; 
         requiredVersion = 1; 
-        requiredAddons[] = {}; // achequer
+        requiredAddons[] = {}; 
     };
 };
 

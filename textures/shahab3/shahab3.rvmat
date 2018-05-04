@@ -1,15 +1,18 @@
+
+
 #define _ARMA_
+
 
 Ambient[]={1,1,1,1};
 Diffuse[]={1,1,1,1};
 ForcedDiffuse[]={0,0,0,0}; 
 emmisive[]={0,0,0,0}; 
-specular[]={0,15,0,15,0,15,0,15};
+specular[]={0.5,0.5,0.5,0.5};
 
-specularPower=30;
+specularPower=90;
 
-PixelShaderID="Super";
-VertexShaderID="Super";
+PixelShaderID="Normal";
+VertexShaderID="Basic";
 
 class Stage1
 {
@@ -30,27 +33,14 @@ class Stage2
 	uvSource = "tex";
 	class uvTransform
 	{
-		aside[] = {1,0,0};
-		up[] = {0,1,0};
+		aside[] = {10,0,0};
+		up[] = {0,10,0};
 		dir[] = {0,0,0};
 		pos[] = {0,0,0};
 	};
 };
-		
+
 class Stage3
-	{
-	texture = "#(argb,8,8,3)color(0.1,0.1,0.1,0.0,MC)";
-	uvSource = "tex";
-	class uvTransform
-	{
-		aside[] = {1,0,0};
-		up[] = {0,1,0};
-		dir[] = {0,0,0};
-		pos[] = {0,0,0};
-	};
-};
-	
-class Stage4
 {
 	texture = "Ballistic_missiles\textures\shahab3\shahab3_SPEC.paa"; //AS SPEC AVEC SHADER MAP
 	uvSource = "tex";
@@ -58,49 +48,13 @@ class Stage4
 	{
 		aside[] = {1,0,0};
 		up[] = {0,1,0};
-		dir[] = {0,0,0};
-		pos[] = {0,0,0};
-	};
-};
-
-class Stage5
-	{
-	texture = "#(argb,8,8,3)color(1,0,1,0,SMDI)";
-	uvSource = "tex";
-	class uvTransform
-	{
-		aside[] = {5,0,0};
-		up[] = {0,5,0};
-		dir[] = {0,0,0};
-		pos[] = {0,0,0};
+		dir[] = {0,0,1};
+		pos[] = {0,0,1};
 	};
 };
 		
-class Stage6 //ORG6
+class Stage4 //ORG6
 {
 	texture = "Ballistic_missiles\textures\shahab3\shahab3_DISP.paa"; //DISP
-	uvSource = "tex";
-	class uvTransform
-	{
-		aside[] = {1,0,0};
-		up[] = {0,1,0};
-		dir[] = {0,0,0};
-		pos[] = {0,0,0};
-	};
+	uvSource = "none";
 };
-		
-class Stage7
-{
-    texture = "a3\data_f\env_land_ca.paa";
-	useWorldEnvMap = "true";
-	uvSource = "tex";
-	class uvTransform
-	{
-		aside[] = {1,0,0};
-		up[] = {0,1,0};
-		dir[] = {0,0,0};
-		pos[] = {0,0,0};
-	};
-};
-			
-
