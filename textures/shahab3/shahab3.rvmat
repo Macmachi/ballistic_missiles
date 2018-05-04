@@ -4,7 +4,7 @@ Ambient[]={1,1,1,1};
 Diffuse[]={1,1,1,1};
 ForcedDiffuse[]={0,0,0,0}; 
 emmisive[]={0,0,0,0}; 
-specular[]=0.05;
+specular[]={0,15,0,15,0,15,0,15};
 
 specularPower=30;
 
@@ -58,8 +58,8 @@ class Stage4
 	{
 		aside[] = {1,0,0};
 		up[] = {0,1,0};
-		dir[] = {0,0,1};
-		pos[] = {0,0,1};
+		dir[] = {0,0,0};
+		pos[] = {0,0,0};
 	};
 };
 
@@ -71,8 +71,8 @@ class Stage5
 	{
 		aside[] = {5,0,0};
 		up[] = {0,5,0};
-		dir[] = {0,0,1};
-		pos[] = {0,0,1};
+		dir[] = {0,0,0};
+		pos[] = {0,0,0};
 	};
 };
 		
@@ -91,9 +91,16 @@ class Stage6 //ORG6
 		
 class Stage7
 {
-        texture="ca\air\data\env_co.paa";
-        uvSource="none";
+    texture = "a3\data_f\env_land_ca.paa";
+	useWorldEnvMap = "true";
+	uvSource = "tex";
+	class uvTransform
+	{
+		aside[] = {1,0,0};
+		up[] = {0,1,0};
+		dir[] = {0,0,0};
+		pos[] = {0,0,0};
+	};
 };
 			
-};
 

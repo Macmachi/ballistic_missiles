@@ -1,17 +1,10 @@
 #define _ARMA_
 
-//Class air_f_beta : HellAngel\Data\Camo.rvmat{
-
-class StageTI
-			{
-				texture = "Ballistic_missiles\textures\iskander_9K720\iskander_9K720.paa";
-			};
-
 Ambient[]={1,1,1,1};
 Diffuse[]={1,1,1,1};
 ForcedDiffuse[]={0,0,0,0}; 
 emmisive[]={0,0,0,0}; 
-specular[]=0.05;
+specular[]={0,15,0,15,0,15,0,15};
 
 specularPower=30;
 
@@ -37,8 +30,8 @@ class Stage2
 	uvSource = "tex";
 	class uvTransform
 	{
-		aside[] = {10,0,0};
-		up[] = {0,10,0};
+		aside[] = {1,0,0};
+		up[] = {0,1,0};
 		dir[] = {0,0,0};
 		pos[] = {0,0,0};
 	};
@@ -65,8 +58,8 @@ class Stage4
 	{
 		aside[] = {1,0,0};
 		up[] = {0,1,0};
-		dir[] = {0,0,1};
-		pos[] = {0,0,1};
+		dir[] = {0,0,0};
+		pos[] = {0,0,0};
 	};
 };
 
@@ -78,8 +71,8 @@ class Stage5
 	{
 		aside[] = {5,0,0};
 		up[] = {0,5,0};
-		dir[] = {0,0,1};
-		pos[] = {0,0,1};
+		dir[] = {0,0,0};
+		pos[] = {0,0,0};
 	};
 };
 		
@@ -108,8 +101,6 @@ class Stage7
 		dir[] = {0,0,0};
 		pos[] = {0,0,0};
 	};
-			
 };
-		
-//};
+			
 
