@@ -1,12 +1,5 @@
 #define _ARMA_
 
-//Class air_f_beta : HellAngel\Data\Camo.rvmat{
-
-class StageTI
-			{
-				texture = "Ballistic_missiles\textures\shahab3\shahab3.paa";
-			};
-
 Ambient[]={1,1,1,1};
 Diffuse[]={1,1,1,1};
 ForcedDiffuse[]={0,0,0,0}; 
@@ -37,8 +30,8 @@ class Stage2
 	uvSource = "tex";
 	class uvTransform
 	{
-		aside[] = {10,0,0};
-		up[] = {0,10,0};
+		aside[] = {1,0,0};
+		up[] = {0,1,0};
 		dir[] = {0,0,0};
 		pos[] = {0,0,0};
 	};
@@ -98,18 +91,9 @@ class Stage6 //ORG6
 		
 class Stage7
 {
-	useWorldEnvMap = "true";
-	texture = "a3\data_f\env_land_ca.paa";
-	uvSource = "tex";
-	class uvTransform
-	{
-		aside[] = {1,0,0};
-		up[] = {0,1,0};
-		dir[] = {0,0,0};
-		pos[] = {0,0,0};
-	};
+        texture="ca\air\data\env_co.paa";
+        uvSource="none";
+};
 			
 };
-		
-//};
 
