@@ -11,6 +11,5 @@ Credits :
 - Source of missile sound : http://www.universal-soundbank.com/
 - Thanks to Bohemia Interactive 
 
-// FONCTION LANCEMENT SANS INTERFACE QUOI?
-// fonction interface quoi?
 // dossier paa mettre dans media dans img?
+// mettre missiles.hpp hpps
