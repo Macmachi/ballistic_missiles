@@ -28,14 +28,14 @@ J'ai pour idée de lancer le son en double un de loin et un proche avec deux vol
 */
 
 //smoked particle number 1 on ignition of thrusters
-_PS1 = "#particlesource" createVehicleLocal getpos _particle_emitter; // PAS LOCAL!
+_PS1 = "#particlesource" createVehicleLocal getpos _particle_emitter; 
 _PS1 setParticleCircle [0, [0, 0, 0]];
 _PS1 setParticleRandom [0, [10, 10, 5], [0.5, 0.5, 0], 0, 0.25, [0.05, 0.05, 0.05, 0.05], 0, 0];
 _PS1 setParticleParams [["\A3\data_f\ParticleEffects\Universal\smoke.p3d", 8, 3, 1], 
 "", 
 "Spaceobject", //type of animation (Billboard (2D), Spaceobject (3D))
  1, //interval of timer (how often is called script defined in parameter onTimerScript)
- 20, //life time of particle in seconds (VOIR POUR PLUS LONG????)
+ 20, //life time of particle in seconds 
  [0, 0, 0], //direction and speed of movement of particle [x,z,y]
  [0, 0, 0.5], //direction and speed of rotation of particle [x,z,y]
  1, //weight of particle (kg)
@@ -66,7 +66,7 @@ _PS2 setParticleParams [["\A3\data_f\ParticleEffects\Universal\smoke.p3d", 8, 3,
 "", 
 "Spaceobject", //type of animation (Billboard (2D), Spaceobject (3D))
  1, //interval of timer (how often is called script defined in parameter onTimerScript)
- 15, //life time of particle in seconds (VOIR POUR PLUS LONG????)
+ 15, //life time of particle in seconds 
  [0, 0, 0], //direction and speed of movement of particle [x,z,y]
  [0, 0, 0.5], //direction and speed of rotation of particle [x,z,y]
  1, //weight of particle (kg)
