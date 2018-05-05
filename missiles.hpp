@@ -5,7 +5,7 @@ class Wreck_base_F;
 
 class shahab3: Wreck_base_F {
 	author = "TILK";
-	mapSize = 7.53;
+	mapSize = 4;
 	class SimpleObject {
 		eden = 0;
 		animate[] = {};
@@ -64,7 +64,7 @@ class shahab3: Wreck_base_F {
 
 class iskander_9K720: Wreck_base_F {
 	author = "TILK";
-	mapSize = 7.53;
+	mapSize = 4;
 	class SimpleObject {
 		eden = 0;
 		animate[] = {};
