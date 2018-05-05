@@ -40,3 +40,12 @@ class CfgEditorSubcategories
 		displayName = "Russia"; // Name visible in the list
 	};	
 };
+
+/////=========cfgSounds==========
+class CfgSounds
+{
+	#include "Hpps\cfgsounds.hpp"
+};
+
+
+
