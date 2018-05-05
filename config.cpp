@@ -2,7 +2,8 @@ class CfgPatches {
     class Missiles {
         units[] = {
 		"shahab3",
-		"iskander_9K720"
+		"iskander_9K720",
+		"minuteman_2"
         }; 
         weapons[] = {}; 
         requiredVersion = 1; 
@@ -39,6 +40,10 @@ class CfgEditorSubcategories
 	{
 		displayName = "Russia"; // Name visible in the list
 	};	
+	class EdSubcat_missiles_country_usa // Category class, you point to it in editorSubcategory property
+	{
+		displayName = "USA"; // Name visible in the list
+	};		
 };
 
 /////=========cfgSounds==========
