@@ -6,13 +6,11 @@ Author of Ballistic missiles mod : TILK
 Creator of the missile launch interface: Mr.H
 
 Credits : 
-- Thanks to Mr.H for his help with the code
-- Site pour les audios rajouter 
-- Bohemia Interactive 
+- Thanks to Mr.H for his Its help with code and interface creation
+(His famous mod for Arma 3 : https://steamcommunity.com/sharedfiles/filedetails/?id=1310581330) 
+- Source of missile sound : http://www.universal-soundbank.com/
+- Thanks to Bohemia Interactive 
 
-
-Restant à faire :
-
-*Ajouter les sons
-*vérifier le décalage des caméras par rapport a l'animation
-*Rajouter particule fumé plus grosse au décollage
+// FONCTION LANCEMENT SANS INTERFACE QUOI?
+// fonction interface quoi?
+// dossier paa mettre dans media dans img?

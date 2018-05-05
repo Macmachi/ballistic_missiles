@@ -1,0 +1,9 @@
+
+/////=========cfgSounds==========
+class CfgSounds
+{
+	#include "Hpps\cfgsounds.hpp"
+};
+
+
+

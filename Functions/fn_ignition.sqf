@@ -3,38 +3,73 @@ systemchat str _this;
 /*
 Name of the script : A simple _missile animation
 Author : TILK
+Credit : Many thanks to the famous Mr.H who contributed a lot to the code and who developed the missile launch interface
 */
-
-/*RECOMMENTER + REFAIRE MODELISATION FUSEE AILETTE! */ 
-
-// Variable name of the object in the editor : _missile
-// Add H pad with the variable "_particle_emitter" (invisible)
-// init of the object or other object (like laptop) in the editor : this addAction ["Touch the object", "simple__missile_animation.sqf"];
 
 _missile = _this select 0;
 
-//_missile removeAction 0; // delete action on the object (after use)
-
-// You can play sound of engine here with play3D
 waitUntil {_missile getVariable ["TILK_MissileLaunch",false];};
 _OBJ  = _missile;
-// créer particle emitter
-_particle_emitter = "Land_HelipadEmpty_F" createVehicle (position _missile);
-_particle_emitter attachTo [_OBJ, [0, 0, -7] ]; 
 
-/*particule fumée */
+// creates a particle emitter
+_particle_emitter = "Land_HelipadEmpty_F" createVehicle (position _missile); // A REMPLACER PAR MEM02 = reactor (POUR H!)
+_particle_emitter attachTo [_OBJ, [0, 0, -7] ]; // A SUPPRIMER une fois la variable reactor utilisé car taille des missiles différents...
 
-_PS = "#particlesource" createVehicleLocal getpos _particle_emitter;
-_PS setParticleCircle [0, [0, 0, 0]];
-_PS setParticleRandom [0, [0, 0, 0], [0.5, 0.5, 0], 0, 0.25, [0.05, 0.05, 0.05, 0.05], 0, 0];
-_PS setParticleParams [["\A3\data_f\ParticleEffects\Universal\smoke.p3d", 8, 3, 1], 
+/*AJOUTER DU CODE ICI pour générer des dégats 
+50m de la fusée = mort
+100m gravement blessé 
+500m blessure légère
+*/
+
+//plays a sound as the missile takes off
+particle_emitter say3D "missilelaunchsound"; // audio file duration 39 seconds
+/*PROBLEME car A partir de 50m on entend plus le missile mais de trop prêt ça explose les oreilles si je mets le volume trop haut 
+J'ai pour idée de lancer le son en double un de loin et un proche avec deux volumes différents pas solution plus optimale?
+*/
+
+//smoked particle number 1 on ignition of thrusters
+_PS1 = "#particlesource" createVehicleLocal getpos _particle_emitter; // PAS LOCAL!
+_PS1 setParticleCircle [0, [0, 0, 0]];
+_PS1 setParticleRandom [0, [10, 10, 5], [0.5, 0.5, 0], 0, 0.25, [0.05, 0.05, 0.05, 0.05], 0, 0];
+_PS1 setParticleParams [["\A3\data_f\ParticleEffects\Universal\smoke.p3d", 8, 3, 1], 
 "", 
 "Spaceobject", //type of animation (Billboard (2D), Spaceobject (3D))
- 0.1, //interval of timer (how often is called script defined in parameter onTimerScript)
- 5, //life time of particle in seconds
- [0, 0, 1], //direction and speed of movement of particle [x,z,y]
- [0, 0, 3], //direction and speed of rotation of particle [x,z,y]
- 1, //weight of particle (kg)aa
+ 1, //interval of timer (how often is called script defined in parameter onTimerScript)
+ 20, //life time of particle in seconds (VOIR POUR PLUS LONG????)
+ [0, 0, 0], //direction and speed of movement of particle [x,z,y]
+ [0, 0, 0.5], //direction and speed of rotation of particle [x,z,y]
+ 1, //weight of particle (kg)
+ 2, //volume of particle (m3)
+ 1, //how much is particle affected by wind/air resistance
+ 50, //size of particle during the life
+ //color of particle during the life (r,g,b,a)
+ [4, 5, 10, 10], 
+ [[0.1, 0.1, 0.1, 0.75], 
+ [0.4, 0.4, 0.4, 0.5], 
+ [1, 1, 1, 0.2]], 
+ [1], //speed of animation (number of animation cycles in 1s)
+ 1, //interval of random speed change
+ 1, //intensity of random speed change
+ "", 
+ "", 
+ _particle_emitter //source of particle emission
+ ];
+_PS1 setDropInterval 0.002;
+
+sleep 2; //2 second break 
+
+//smoked particle number 2 at missile takeoff
+_PS2 = "#particlesource" createVehicleLocal getpos _particle_emitter;
+_PS2 setParticleCircle [0, [0, 0, 0]];
+_PS2 setParticleRandom [0, [0, 0, 0], [0.5, 0.5, 0], 0, 0.25, [0.05, 0.05, 0.05, 0.05], 0, 0];
+_PS2 setParticleParams [["\A3\data_f\ParticleEffects\Universal\smoke.p3d", 8, 3, 1], 
+"", 
+"Spaceobject", //type of animation (Billboard (2D), Spaceobject (3D))
+ 1, //interval of timer (how often is called script defined in parameter onTimerScript)
+ 15, //life time of particle in seconds (VOIR POUR PLUS LONG????)
+ [0, 0, 0], //direction and speed of movement of particle [x,z,y]
+ [0, 0, 0.5], //direction and speed of rotation of particle [x,z,y]
+ 1, //weight of particle (kg)
  2, //volume of particle (m3)
  1, //how much is particle affected by wind/air resistance
  15, //size of particle during the life
@@ -48,22 +83,20 @@ _PS setParticleParams [["\A3\data_f\ParticleEffects\Universal\smoke.p3d", 8, 3, 
  1, //intensity of random speed change
  "", 
  "", 
- _particle_emitter
+ _particle_emitter //source of particle emission
  ];
-_PS setDropInterval 0.02;
+_PS2 setDropInterval 0.002;
 
-sleep 2; //2 seconds 
+_a = 1; //iniatialize our variable allowing to control the animation 
 
-_a = 1; 
-
-while {_a < 2000} // total duration of the animation (a = a+1 every 0.01 second)
+/*Start animation*/
+while {_a < 5000} //total duration of the animation (a = a+1 every 0.001 second)
 
 do { 
 
-/*Animation - Part 1*/
 //Camera effect 
 if (_a==2) then {
-addCamShake [2, 5, 25];
+addCamShake [2, 5, 25]; // POUR H possible de faire en sorte que la caméra shake seulement pour les joueurs qui sont dans les 500m-1km? du lancement
 };
 //Moves the object on the z axis
 if (_a < 200) then {
@@ -74,14 +107,14 @@ hint str _a; // debug
 };
 
 if (_a==200) then {
-/*particule feu*/
+/*create fire particle*/
 _objfire = "test_EmptyObjectForFireBig" createVehicle getpos _missile;
 _objfire attachTo [_missile, [0, 0, -1] ];
-
+deleteVehicle _PS1; //delete smoked particle number 1 on ignition of thrusters 
 };
 
 if (_a==250) then {
-addCamShake [10, 2, 25];
+addCamShake [10, 2, 25]; // POUR H possible de faire en sorte que la caméra shake seulement pour les joueurs qui sont dans les 500m-1km? du lancement
 };
 
 if (_a >= 200) then {
@@ -95,10 +128,10 @@ hint str _a; // debug
 if (_a == 2000) then {
 deleteVehicle _missile; // delete object
 deleteVehicle _particle_emitter; // delete object
-deleteVehicle _objfire;
+deleteVehicle _objfire; // delete object
 hint "End of animation"; // debug
 };
 
-}; // Close the loop
+}; //Close the loop
 
 };
