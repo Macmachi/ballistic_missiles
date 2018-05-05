@@ -18,7 +18,7 @@ class cfgFunctions
 };
 class cfgVehicles
 {
-#include"\Ballistic_missiles\missiles.hpp"
+#include"\Ballistic_missiles\Hpps\missiles.hpp"
 };
 
 class CfgEditorCategories
