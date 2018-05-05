@@ -6,10 +6,7 @@ Author of Ballistic missiles mod : TILK
 Creator of the missile launch interface: Mr.H
 
 Credits : 
-- Thanks to Mr.H for his Its help with code and interface creation
-(His famous mod for Arma 3 : https://steamcommunity.com/sharedfiles/filedetails/?id=1310581330) 
+- Thanks to Mr.H for his help with the code and the creation of the missile launch interface
+(You can check his famous mod for Arma 3 : https://steamcommunity.com/sharedfiles/filedetails/?id=1310581330) 
 - Source of missile sound : http://www.universal-soundbank.com/
 - Thanks to Bohemia Interactive 
-
-// dossier paa mettre dans media dans img?
-// mettre missiles.hpp hpps
