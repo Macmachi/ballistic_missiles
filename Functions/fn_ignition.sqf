@@ -131,8 +131,8 @@ hint str _a; // debug
 
 /*End animation*/
 if (_a == 5000) then {
-deleteVehicle _missile; // delete object
 deleteVehicle _objfire; // delete object
+deleteVehicle _missile; // delete object
 hint "End of animation"; // debug
 };
 
