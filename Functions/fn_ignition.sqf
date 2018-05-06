@@ -90,7 +90,7 @@ _PS2 setParticleParams [
 				//timerPeriod, /*Number*/
 				1,
 				//lifeTime, /*Number*/
-				25,
+				18,
 				//position, /*3D Array of numbers as relative position to particleSource or (if object at index 18 is set) object. Or (if object at index 18 is set) String as memoryPoint of object.*/
 				"Reactor",
 				//moveVelocity, /*3D Array of numbers.*/
@@ -104,7 +104,7 @@ _PS2 setParticleParams [
 				//rubbing, /*Number*/
 				1,
 				//size, /*Array of Number*/
-				[2,2,2,0], //achecquer
+				[2,2,2,0], 
 				//color, /*Array of Array of RGBA Numbers*/
 				[[4, 5, 10, 10]],
 			   //animationSpeed, /*Array of Number*/
@@ -134,7 +134,7 @@ _PS2 setDropInterval 0.002;
 _a = 1; //iniatialize our variable allowing to control the animation 
 
 /*Start animation*/
-while {_a < 5000} //total duration of the animation (a = a+1 every 0.001 second)
+while {_a < 4000} //total duration of the animation (a = a+1 every 0.001 second)
 
 		do { 
 
@@ -171,7 +171,7 @@ while {_a < 5000} //total duration of the animation (a = a+1 every 0.001 second)
 		};
 
 		/*End animation*/
-		if (_a == 5000) then {
+		if (_a == 4000) then {
 		_objfire = _missile getVariable "TILK_firesource";
 
 		//_objfire call fnc_deleteTestObj; // delete object
