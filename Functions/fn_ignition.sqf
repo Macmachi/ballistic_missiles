@@ -9,11 +9,10 @@ Credit : Many thanks to the famous Mr.H who contributed a lot to the code and wh
 _missile = _this select 0;
 
 waitUntil {_missile getVariable ["TILK_MissileLaunch",false];};
+// Creation of OBJ variable
 _OBJ  = _missile;
-
-// creates a particle emitter
-_particle_emitter = "Land_HelipadEmpty_F" createVehicle (position _missile); // A SUPPRIMER une fois la variable reactor utilisé car taille des missiles différents...
-_particle_emitter attachTo [_OBJ, [0, 0, -7] ]; // A SUPPRIMER une fois la variable reactor utilisé car taille des missiles différents...
+// Creation of variable with position of mem LOD (reactor)
+_emmiterpos = _missile modelToWorld (_missile selectionPosition "reactor");
 
 /*AJOUTER DU CODE ICI pour générer des dégats 
 50m de la fusée = mort
@@ -28,7 +27,7 @@ J'ai pour idée de lancer le son en double un de loin et un proche avec deux vol
 */
 
 //smoked particle number 1 on ignition of thrusters
-_PS1 = "#particlesource" createVehicleLocal _missile modelToWorld (_missile selectionPosition "reactor");
+_PS1 = "#particlesource" createVehicleLocal _emmiterpos;
 _PS1 setParticleCircle [0, [0, 0, 0]];
 _PS1 setParticleRandom [0, [10, 10, 5], [0.5, 0.5, 0], 0, 0.25, [0.05, 0.05, 0.05, 0.05], 0, 0];
 _PS1 setParticleParams [["\A3\data_f\ParticleEffects\Universal\smoke.p3d", 8, 3, 1], 
@@ -52,14 +51,14 @@ _PS1 setParticleParams [["\A3\data_f\ParticleEffects\Universal\smoke.p3d", 8, 3,
  1, //intensity of random speed change
  "", 
  "", 
- _particle_emitter //source of particle emission A MODIFIER AVEC REACTOR
+ _emmiterpos //source of particle emission 
  ];
 _PS1 setDropInterval 0.002;
 
 sleep 2; //2 second break 
 
 //smoked particle number 2 at missile takeoff
-_PS2 = "#particlesource" createVehicleLocal _missile modelToWorld (_missile selectionPosition "reactor");
+_PS2 = "#particlesource" createVehicleLocal _emmiterpos;
 _PS2 setParticleCircle [0, [0, 0, 0]];
 _PS2 setParticleRandom [0, [0, 0, 0], [0.5, 0.5, 0], 0, 0.25, [0.05, 0.05, 0.05, 0.05], 0, 0];
 _PS2 setParticleParams [["\A3\data_f\ParticleEffects\Universal\smoke.p3d", 8, 3, 1], 
@@ -83,7 +82,7 @@ _PS2 setParticleParams [["\A3\data_f\ParticleEffects\Universal\smoke.p3d", 8, 3,
  1, //intensity of random speed change
  "", 
  "", 
- _particle_emitter //source of particle emission A MODIFIER AVEC REACTOR
+_emmiterpos //source of particle emission 
  ];
 _PS2 setDropInterval 0.002;
 
@@ -127,7 +126,6 @@ hint str _a; // debug
 /*End animation*/
 if (_a == 2000) then {
 deleteVehicle _missile; // delete object
-deleteVehicle _particle_emitter; // delete object A SUPPRIMER DES QUE REACTOR UTILISE PARTOUT
 deleteVehicle _objfire; // delete object
 hint "End of animation"; // debug
 };
