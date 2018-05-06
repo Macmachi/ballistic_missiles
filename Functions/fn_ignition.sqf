@@ -27,7 +27,7 @@ J'ai pour idée de lancer le son en double un de loin et un proche avec deux vol
 */
 
 //smoked particle number 1 on ignition of thrusters
-_PS1 = "#particlesource" createVehicleLocal _emmiterpos;
+_PS1 = "#particlesource" createVehicleLocal getpos _emmiterpos;
 _PS1 setParticleCircle [0, [0, 0, 0]];
 _PS1 setParticleRandom [0, [10, 10, 5], [0.5, 0.5, 0], 0, 0.25, [0.05, 0.05, 0.05, 0.05], 0, 0];
 _PS1 setParticleParams [["\A3\data_f\ParticleEffects\Universal\smoke.p3d", 8, 3, 1], 
@@ -58,7 +58,7 @@ _PS1 setDropInterval 0.002;
 sleep 2; //2 second break 
 
 //smoked particle number 2 at missile takeoff
-_PS2 = "#particlesource" createVehicleLocal _emmiterpos;
+_PS2 = "#particlesource" createVehicleLocal getpos _emmiterpos;
 _PS2 setParticleCircle [0, [0, 0, 0]];
 _PS2 setParticleRandom [0, [0, 0, 0], [0.5, 0.5, 0], 0, 0.25, [0.05, 0.05, 0.05, 0.05], 0, 0];
 _PS2 setParticleParams [["\A3\data_f\ParticleEffects\Universal\smoke.p3d", 8, 3, 1], 
@@ -107,7 +107,7 @@ hint str _a; // debug
 
 if (_a==200) then {
 /*create fire particle*/
-_objfire = "test_EmptyObjectForFireBig" createVehicle _missile modelToWorld (_missile selectionPosition "reactor");
+_objfire = "test_EmptyObjectForFireBig" createVehicle getpos _emmiterpos;
 _objfire attachTo [_missile, [0, 0, -1] ];
 deleteVehicle _PS1; //delete smoked particle number 1 on ignition of thrusters 
 };
