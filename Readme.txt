@@ -10,3 +10,10 @@ Credits :
 (You can check his famous mod for Arma 3 : https://steamcommunity.com/sharedfiles/filedetails/?id=1310581330) 
 - Source of missile sound : http://www.universal-soundbank.com/
 - Thanks to Bohemia Interactive 
+
+
+A faire :
+*Son bug ? (possible le faire entendre de loin?)
+*Degat de proximité (2 zones?) ?
+*Camerashack pas global?
+
