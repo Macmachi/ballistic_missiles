@@ -11,8 +11,8 @@ _missile = _this select 0;
 systemChat str _missile;
 waitUntil {_missile getVariable ["TILK_MissileLaunch",false];};
 
-
 //particle_emitter say3D "missilelaunchsound"; // audio file duration 39 seconds
+//gestion degat via un trigger qui reste sur place met ce supprime apres 1ou2 seconde si joueur trop pret = mort
 
 _emiterpos= _missile modelToWorld (_missile selectionPosition "reactor"); 
 //smoked particle number 1 on ignition of thrusters
