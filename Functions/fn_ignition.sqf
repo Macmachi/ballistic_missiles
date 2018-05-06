@@ -22,13 +22,13 @@ _particle_emitter attachTo [_OBJ, [0, 0, -7] ]; // A SUPPRIMER une fois la varia
 */
 
 //plays a sound as the missile takes off
-particle_emitter say3D "missilelaunchsound"; // audio file duration 39 seconds
+_this say3D "missilelaunchsound"; // audio file duration 39 seconds
 /*PROBLEME car A partir de 50m on entend plus le missile mais de trop prêt ça explose les oreilles si je mets le volume trop haut 
 J'ai pour idée de lancer le son en double un de loin et un proche avec deux volumes différents pas solution plus optimale?
 */
 
 //smoked particle number 1 on ignition of thrusters
-_PS1 = "#particlesource" createVehicleLocal getpos _particle_emitter; 
+_PS1 = "#particlesource" createVehicleLocal _missile modelToWorld (_missile selectionPosition "reactor");
 _PS1 setParticleCircle [0, [0, 0, 0]];
 _PS1 setParticleRandom [0, [10, 10, 5], [0.5, 0.5, 0], 0, 0.25, [0.05, 0.05, 0.05, 0.05], 0, 0];
 _PS1 setParticleParams [["\A3\data_f\ParticleEffects\Universal\smoke.p3d", 8, 3, 1], 
@@ -59,7 +59,7 @@ _PS1 setDropInterval 0.002;
 sleep 2; //2 second break 
 
 //smoked particle number 2 at missile takeoff
-_PS2 = "#particlesource" createVehicleLocal getpos _particle_emitter;
+_PS2 = "#particlesource" createVehicleLocal _missile modelToWorld (_missile selectionPosition "reactor");
 _PS2 setParticleCircle [0, [0, 0, 0]];
 _PS2 setParticleRandom [0, [0, 0, 0], [0.5, 0.5, 0], 0, 0.25, [0.05, 0.05, 0.05, 0.05], 0, 0];
 _PS2 setParticleParams [["\A3\data_f\ParticleEffects\Universal\smoke.p3d", 8, 3, 1], 
@@ -108,7 +108,7 @@ hint str _a; // debug
 
 if (_a==200) then {
 /*create fire particle*/
-_objfire = "test_EmptyObjectForFireBig" createVehicle getpos _missile;
+_objfire = "test_EmptyObjectForFireBig" createVehicle _missile modelToWorld (_missile selectionPosition "reactor");
 _objfire attachTo [_missile, [0, 0, -1] ];
 deleteVehicle _PS1; //delete smoked particle number 1 on ignition of thrusters 
 };
