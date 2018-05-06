@@ -9,10 +9,16 @@ Credit : Many thanks to the famous Mr.H who contributed a lot to the code and wh
 _missile = _this select 0;
 
 waitUntil {_missile getVariable ["TILK_MissileLaunch",false];};
-// Creation of OBJ variable
+//Creation of OBJ variable
 _OBJ  = _missile;
+
 // Creation of variable with position of mem LOD (reactor)
 _emmiterpos = _missile modelToWorld (_missile selectionPosition "reactor");
+
+//allows to adapt to the difference in size of each missile by creating an object attached to the mem02 point(reactor)
+//because you have to go through an object not a position
+_missilepos = "Land_HelipadEmpty_F" createVehicle _emmiterpos;
+_missilepos attachTo [_missile, [0, 0, -4] ];
 
 /*AJOUTER DU CODE ICI pour générer des dégats 
 50m de la fusée = mort
@@ -21,13 +27,13 @@ _emmiterpos = _missile modelToWorld (_missile selectionPosition "reactor");
 */
 
 //plays a sound as the missile takes off
-_this say3D "missilelaunchsound"; // audio file duration 39 seconds
+(_this select 0) say3D "missilelaunchsound"; // audio file duration 39 seconds
 /*PROBLEME car A partir de 50m on entend plus le missile mais de trop prêt ça explose les oreilles si je mets le volume trop haut 
 J'ai pour idée de lancer le son en double un de loin et un proche avec deux volumes différents pas solution plus optimale?
 */
 
 //smoked particle number 1 on ignition of thrusters
-_PS1 = "#particlesource" createVehicleLocal getpos _emmiterpos;
+_PS1 = "#particlesource" createVehicleLocal _emmiterpos;
 _PS1 setParticleCircle [0, [0, 0, 0]];
 _PS1 setParticleRandom [0, [10, 10, 5], [0.5, 0.5, 0], 0, 0.25, [0.05, 0.05, 0.05, 0.05], 0, 0];
 _PS1 setParticleParams [["\A3\data_f\ParticleEffects\Universal\smoke.p3d", 8, 3, 1], 
@@ -51,14 +57,14 @@ _PS1 setParticleParams [["\A3\data_f\ParticleEffects\Universal\smoke.p3d", 8, 3,
  1, //intensity of random speed change
  "", 
  "", 
- _emmiterpos //source of particle emission 
+_missilepos //source of particle emission 
  ];
 _PS1 setDropInterval 0.002;
 
 sleep 2; //2 second break 
 
 //smoked particle number 2 at missile takeoff
-_PS2 = "#particlesource" createVehicleLocal getpos _emmiterpos;
+_PS2 = "#particlesource" createVehicleLocal _emmiterpos;
 _PS2 setParticleCircle [0, [0, 0, 0]];
 _PS2 setParticleRandom [0, [0, 0, 0], [0.5, 0.5, 0], 0, 0.25, [0.05, 0.05, 0.05, 0.05], 0, 0];
 _PS2 setParticleParams [["\A3\data_f\ParticleEffects\Universal\smoke.p3d", 8, 3, 1], 
@@ -82,7 +88,7 @@ _PS2 setParticleParams [["\A3\data_f\ParticleEffects\Universal\smoke.p3d", 8, 3,
  1, //intensity of random speed change
  "", 
  "", 
-_emmiterpos //source of particle emission 
+_missilepos //source of particle emission 
  ];
 _PS2 setDropInterval 0.002;
 
@@ -107,7 +113,7 @@ hint str _a; // debug
 
 if (_a==200) then {
 /*create fire particle*/
-_objfire = "test_EmptyObjectForFireBig" createVehicle getpos _emmiterpos;
+_objfire = "test_EmptyObjectForFireBig" createVehicle _emmiterpos;
 _objfire attachTo [_missile, [0, 0, -1] ];
 deleteVehicle _PS1; //delete smoked particle number 1 on ignition of thrusters 
 };
@@ -124,7 +130,7 @@ hint str _a; // debug
 };
 
 /*End animation*/
-if (_a == 2000) then {
+if (_a == 5000) then {
 deleteVehicle _missile; // delete object
 deleteVehicle _objfire; // delete object
 hint "End of animation"; // debug
