@@ -14,6 +14,7 @@ Credits :
 
 A faire :
 *Son bug ? (possible le faire entendre de loin?)
-*Degat de proximité (2 zones?) ?
-*Camerashack pas global?
+*Tester SQF mission sur serveur
+*Degat de proximité (1 zones de mort) --> voir avec addtrigger
+*Camerashack pas global? ---> demander à H
 
