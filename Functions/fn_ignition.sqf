@@ -76,6 +76,7 @@ _PS1 setDropInterval 0.002;
 
 sleep 2; //2 second break 
 
+//smoked particle number 2 
 _PS2 = "#particlesource" createVehicleLocal _emiterpos;
 _PS2 setParticleCircle [0, [0, 0, 0]];
 _PS2 setParticleRandom [0, [0, 0, 0], [0.5, 0.5, 0], 0, 0.25, [0.05, 0.05, 0.05, 0.05], 0, 0];
@@ -131,17 +132,71 @@ _PS2 setParticleParams [
 		
 _PS2 setDropInterval 0.002;
 
+//fire particle 
+_PS3 = "#particlesource" createVehicleLocal _emiterpos;
+_PS3 setParticleCircle [0, [0, 0, 0]];
+_PS3 setParticleRandom [0, [0, 0, 0], [0.5, 0.5, 0.5], 0, 0.25, [0.05, 0.05, 0.05, 0.05], 0, 0];
+_PS3 setParticleParams 
+         [
+                ["\A3\data_f\ParticleEffects\Universal\Universal.p3d",16,10,32], 
+                "",
+                "billboard",
+				//timerPeriod, /*Number*/
+				1,
+				//lifeTime, /*Number*/
+			     0.8,
+				//position, /*3D Array of numbers as relative position to particleSource or (if object at index 18 is set) object. Or (if object at index 18 is set) String as memoryPoint of object.*/
+                "Reactor",
+				//moveVelocity, /*3D Array of numbers.*/
+                [0, 0, 0.2],
+				//rotationVelocity, /*Number*/
+                 1,
+				//weight, /*Number*/
+                0.0565,
+				//volume, /*Number*/
+                0.045,
+                 //rubbing, /*Number*/
+				0.025,
+				//size, /*Array of Number*/
+				[1.5,1.5,1.5,0], 
+				//color, /*Array of Array of RGBA Numbers*/
+				[[4, 5, 10, 10]],
+			    //animationSpeed, /*Array of Number*/
+			    [1,0],
+				//randomDirectionPeriod, /*Number*/
+				0,
+				//randomDirectionIntensity, /*Number*/
+				0,
+				//onTimerScript, /*String*/
+				"",
+				//beforeDestroyScript, /*String*/
+				"",
+				//this, /*Object*/
+				_missile,
+				//angle, /*Optional Number - Default: 0*/
+				90,
+				//onSurface, /*Optional Boolean*/
+				false,
+				//bounceOnSurface, /*Optional Number*/
+				0,
+				//emissiveColor /*Optional Array of Array of RGBA Numbers*/
+				[[1,1,1,-0],[1,1,1,-1],[1,1,1,-1],[1,1,1,-1],[1,1,1,-1],[1,1,1,-0]]
+				
+			];
+
+_PS3 setDropInterval 0.02;
+
+
 _a = 1; //iniatialize our variable allowing to control the animation 
 
 /*Start animation*/
 while {_a < 4000} //total duration of the animation (a = a+1 every 0.001 second)
 
 		do { 
-
 		//Camera effect 
 		if (_a==2) then {
 		deleteVehicle _PS1; //delete smoked particle number 1 on ignition of thrusters 
-		addCamShake [2, 5, 25]; // POUR H possible de faire en sorte que la caméra shake seulement pour les joueurs qui sont dans les 500m-1km? du lancement
+		addCamShake [5, 2, 25]; // POUR H possible de faire en sorte que la caméra shake seulement pour les joueurs qui sont dans les 500m-1km? du lancement
 		};
 		//Moves the object on the z axis
 		if (_a < 200) then {
@@ -150,33 +205,16 @@ while {_a < 4000} //total duration of the animation (a = a+1 every 0.001 second)
 		_a = _a+1;
 		hintSilent str _a; // debug
 		};
-
-		if (_a==200) then {
-		/*create fire particle*/
-		_objfire = "test_EmptyObjectForFireBig" createVehicle getpos _missile;
-		_objfire attachTo [_missile, [0, 0, -1] ];
-		
-		_missile setVariable ["TILK_firesource",_objfire];
-		};
-
-		if (_a==250) then {
-		addCamShake [10, 2, 25]; // POUR H possible de faire en sorte que la caméra shake seulement pour les joueurs qui sont dans les 500m-1km? du lancement
-		};
-
+		//Acceleration	
 		if (_a >= 200) then {
 		_missile setPos (getPos _missile vectorAdd [0,0,0.12]);
 		sleep 0.001;
 		_a = _a+1;
 		hintSilent str _a; // debug
 		};
-
 		/*End animation*/
 		if (_a == 4000) then {
-		_objfire = _missile getVariable "TILK_firesource";
-
-		//_objfire call fnc_deleteTestObj; // delete object
-		deleteVehicle _objfire;
-		deleteVehicle _missile; // delete object
+		deleteVehicle _missile; // delete missile (that delete particles too)
 		hint "End of animation"; // debug
 		};
 
