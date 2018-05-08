@@ -16,7 +16,7 @@ VertexShaderID="Basic";
 
 class Stage1
 {
-	texture = "Ballistic_missiles\textures\shahab3\shahab3_NORM.paa";//NORM
+	texture = "Ballistic_missiles\textures\iskander_9K720\iskander_9K720_LOW_NORM.paa";//NORM
 	uvSource = "tex";
 	class uvTransform
 	{
@@ -29,7 +29,7 @@ class Stage1
 
 class Stage2
 {
-	texture = "Ballistic_missiles\textures\shahab3\shahab3_AO.paa";//AO
+	texture = "Ballistic_missiles\textures\iskander_9K720\iskander_9K720_LOW_AO.paa";//AO
 	uvSource = "tex";
 	class uvTransform
 	{
@@ -42,7 +42,7 @@ class Stage2
 
 class Stage3
 {
-	texture = "Ballistic_missiles\textures\shahab3\shahab3_SPEC.paa"; //AS SPEC AVEC SHADER MAP
+	texture = "Ballistic_missiles\textures\iskander_9K720\iskander_9K720_LOW_SPEC.paa"; //AS SPEC AVEC SHADER MAP
 	uvSource = "tex";
 	class uvTransform
 	{
@@ -55,6 +55,6 @@ class Stage3
 		
 class Stage4 //ORG6
 {
-	texture = "Ballistic_missiles\textures\shahab3\shahab3_DISP.paa"; //DISP
+	texture = "Ballistic_missiles\textures\iskander_9K720\iskander_9K720_LOW_DISP.paa"; //DISP
 	uvSource = "none";
 };

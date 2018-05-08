@@ -14,7 +14,7 @@ class shahab3: Wreck_base_F {
 		verticalOffsetWorld = 0;
 		init = "''";
 	};
-	editorPreview = "\Ballistic_missiles\icons\shahab3_icon.paa";
+	editorPreview = "\Ballistic_missiles\media\icons\shahab3_icon.paa";
 	//_generalMacro = "Land_Wreck_BMP2_F";
 	scope = 2;
 	scopeCurator = 2;
@@ -73,7 +73,7 @@ class iskander_9K720: Wreck_base_F {
 		verticalOffsetWorld = 0;
 		init = "''";
 	};
-	editorPreview = "\Ballistic_missiles\icons\iskander_9K720_icon.paa";
+	editorPreview = "\Ballistic_missiles\media\icons\iskander_9K720_icon.paa";
 	//_generalMacro = "Land_Wreck_BMP2_F";
 	scope = 2;
 	scopeCurator = 2;
@@ -133,7 +133,7 @@ class minuteman_2: Wreck_base_F {
 		verticalOffsetWorld = 0;
 		init = "''";
 	};
-	editorPreview = "\Ballistic_missiles\icons\iskander_9K720_icon.paa";
+	editorPreview = "\Ballistic_missiles\media\icons\minuteman_2_icon.paa";
 	//_generalMacro = "Land_Wreck_BMP2_F";
 	scope = 2;
 	scopeCurator = 2;
