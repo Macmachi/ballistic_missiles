@@ -14,6 +14,8 @@ waitUntil {_missile getVariable ["TILK_MissileLaunch",false];};
 _missile say3D "missilelaunchsound"; // audio file duration 39 seconds
 //gestion degat via un trigger qui reste sur place met ce supprime apres 1ou2 seconde si joueur trop pret = mort
 
+//particle_emitter say3D "missilelaunchsound"; // audio file duration 39 seconds
+
 _emiterpos= _missile modelToWorld (_missile selectionPosition "reactor"); 
 //smoked particle number 1 on ignition of thrusters
 _PS1 = "#particlesource" createVehicleLocal _emiterpos;
@@ -132,7 +134,7 @@ _PS2 setParticleParams [
 		
 _PS2 setDropInterval 0.002;
 
-//fire particle 
+//fire particle number 1
 _PS3 = "#particlesource" createVehicleLocal _emiterpos;
 _PS3 setParticleCircle [0, [0, 0, 0]];
 _PS3 setParticleRandom [0, [0, 0, 0], [0.5, 0.5, 0.5], 0, 0.25, [0.05, 0.05, 0.05, 0.05], 0, 0];
@@ -148,7 +150,7 @@ _PS3 setParticleParams
 				//position, /*3D Array of numbers as relative position to particleSource or (if object at index 18 is set) object. Or (if object at index 18 is set) String as memoryPoint of object.*/
                 "Reactor",
 				//moveVelocity, /*3D Array of numbers.*/
-                [0, 0, 0.2],
+                [0, 0, 0],
 				//rotationVelocity, /*Number*/
                  1,
 				//weight, /*Number*/
@@ -185,29 +187,96 @@ _PS3 setParticleParams
 			];
 
 _PS3 setDropInterval 0.02;
-
-
+			
+//fire particle number 2
+_PS4 = "#particlesource" createVehicleLocal _emiterpos;
+_PS4 setParticleCircle [0, [0, 0, 0]];
+_PS4 setParticleRandom [0, [0, 0, 0], [0.5, 0.5, 0.5], 0, 0.25, [0.05, 0.05, 0.05, 0.05], 0, 0];
+_PS4 setParticleParams 
+         [
+                ["\A3\data_f\ParticleEffects\Universal\Universal.p3d",16,10,32], 
+                "",
+                "billboard",
+				//timerPeriod, /*Number*/
+				1,
+				//lifeTime, /*Number*/
+			     0.5,
+				//position, /*3D Array of numbers as relative position to particleSource or (if object at index 18 is set) object. Or (if object at index 18 is set) String as memoryPoint of object.*/
+                "Reactor",
+				//moveVelocity, /*3D Array of numbers.*/
+                [0, 0, 0],
+				//rotationVelocity, /*Number*/
+                 1,
+				//weight, /*Number*/
+                0.0565,
+				//volume, /*Number*/
+                0.045,
+                 //rubbing, /*Number*/
+				0.025,
+				//size, /*Array of Number*/
+				[4,4,4,0], 
+				//color, /*Array of Array of RGBA Numbers*/
+				[[4, 5, 10, 10]],
+			    //animationSpeed, /*Array of Number*/
+			    [1,0],
+				//randomDirectionPeriod, /*Number*/
+				0,
+				//randomDirectionIntensity, /*Number*/
+				0,
+				//onTimerScript, /*String*/
+				"",
+				//beforeDestroyScript, /*String*/
+				"",
+				//this, /*Object*/
+				_missile,
+				//angle, /*Optional Number - Default: 0*/
+				90,
+				//onSurface, /*Optional Boolean*/
+				false,
+				//bounceOnSurface, /*Optional Number*/
+				0,
+				//emissiveColor /*Optional Array of Array of RGBA Numbers*/
+				[[1,1,1,-0],[1,1,1,-1],[1,1,1,-1],[1,1,1,-1],[1,1,1,-1],[1,1,1,-0]]
+				
+			];
+			
 _a = 1; //iniatialize our variable allowing to control the animation 
 
 /*Start animation*/
 while {_a < 4000} //total duration of the animation (a = a+1 every 0.001 second)
 
 		do { 
+		
+		//Check if fire particle number 2 can start
+	    if (_check == 1) then {
+	    _PS4 setDropInterval 0.02;
+	    };		
 		//Camera effect 
 		if (_a==2) then {
 		deleteVehicle _PS1; //delete smoked particle number 1 on ignition of thrusters 
 		addCamShake [5, 2, 25]; // POUR H possible de faire en sorte que la caméra shake seulement pour les joueurs qui sont dans les 500m-1km? du lancement
 		};
 		//Moves the object on the z axis
-		if (_a < 200) then {
-		_missile setPos (getPos _missile vectorAdd [0,0,0.01]);
+		if (_a < 300) then {
+		_missile setPos (getPos _missile vectorAdd [0,0,0.1]);
 		sleep 0.001;
 		_a = _a+1;
 		hintSilent str _a; // debug
 		};
+		if (_a==290) then {
+		//Fire particule number 2 (start)
+		_check = 1;
+		};	
+		if (_a==460) then {
+	    //Fire particule number 2 (stopped)
+		_check = 0;
+		//Fire particule number 2 (deleted)
+		deleteVehicle _PS4;
+		addCamShake [10, 2, 25]; // POUR H possible de faire en sorte que la caméra shake seulement pour les joueurs qui sont dans les 500m-1km? du lancement
+		};	
 		//Acceleration	
-		if (_a >= 200) then {
-		_missile setPos (getPos _missile vectorAdd [0,0,0.12]);
+		if (_a >= 300) then {
+		_missile setPos (getPos _missile vectorAdd [0,0,0.18]);
 		sleep 0.001;
 		_a = _a+1;
 		hintSilent str _a; // debug
