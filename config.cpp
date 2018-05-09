@@ -15,7 +15,7 @@ class CfgPatches {
 #include "\Ballistic_missiles\InterfaceHpps\interface.hpp"
 class cfgFunctions
 {
-	#include "\Ballistic_missiles\Functions\functions.hpp"
+#include "\Ballistic_missiles\Functions\functions.hpp"
 };
 class cfgVehicles
 {

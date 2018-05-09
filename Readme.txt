@@ -1,20 +1,27 @@
-Ballistic missiles mod for Arma 3
+[[[Ballistic missiles mod for Arma 3]]]
 
-Warning: If you use things from this mod you have to credit me!
+[NOTICE] If you use things from this mod you have to credit us!
 
-Author of Ballistic missiles mod : TILK 
-Creator of the missile launch interface: Mr.H
+[Authors of Ballistic missiles mod for Arma 3] 
+- TILK : Realization of 3D models, import and adaptation of models in arma 3, participation in animation code and particle settings and debugging
+- Mr.H : Creator of the missile launch interface, configuration of objects in arma 3, made the majority of the code with many code improvement and debugging
 
 Credits : 
-- Thanks to Mr.H for his help with the code and the creation of the missile launch interface
-(You can check his famous mod for Arma 3 : https://steamcommunity.com/sharedfiles/filedetails/?id=1310581330) 
-- Source of missile sound : http://www.universal-soundbank.com/
+- Source of missile sound : universal-soundbank.com
 - Thanks to Bohemia Interactive 
 
+[Advertising]
+- You can download Mr.H's famous satellite mod for arma 3, here : https://steamcommunity.com/sharedfiles/filedetails/?id=1310581330 
+- If you are mission maker my comrade RedBelette develops a mission framework that you 
+find here: http://steamcommunity.com/sharedfiles/filedetails/?id=1226877632&searchtext=red+framework
 
-A faire :
-*Son bug ? (possible le faire entendre de loin?)
-*Tester SQF mission sur serveur
-*Degat de proximité (1 zones de mort) --> voir avec addtrigger
-*Camerashack pas global? ---> demander à H
+[Acknowledgements]
+Many thanks to the TGV team
+
+[[[Remaining Changes]]]
+*Missiles are not suppressed
+*Supression des images et des noms de missiles tirés dans l'interface de lancement
+*Remove messages for debugging (shape, nom missile dans l'editeur + delete a la fin de l'animation)
+
+*degat?
 

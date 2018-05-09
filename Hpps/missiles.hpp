@@ -1,12 +1,10 @@
-allTILKBallisticMissiles[]={"shahab3","iskander_9K720","minuteman_2"};//ajouter les noms de classe de tes missiles ici si tu en crées de nouveaux
+allTILKBallisticMissiles[]={"shahab3","iskander_9K720","minuteman_2"};//add the missile class names here if new
 class Land_CampingChair_V2_F;
 
 /* Shahab 3 */
 class MissilePropBase_F : Land_CampingChair_V2_F {
 	author = "TILK";
 	mapSize = 4;
-
-	
 
 	scope = 0;
 	scopeCurator = 0;
@@ -51,6 +49,7 @@ class MissilePropBase_F : Land_CampingChair_V2_F {
 	};
 	
 };
+
 class shahab3: MissilePropBase_F {
 
 	editorPreview = "\Ballistic_missiles\media\icons\shahab3_icon.paa";
@@ -63,7 +62,6 @@ class shahab3: MissilePropBase_F {
 
 };
 
-
 class iskander_9K720: MissilePropBase_F {
 	
 	editorPreview = "\Ballistic_missiles\media\icons\iskander_9K720_icon.paa";
@@ -75,8 +73,6 @@ class iskander_9K720: MissilePropBase_F {
     editorSubcategory = "EdSubcat_missiles_country_russia";
 	
 };
-
-
 
 class minuteman_2: MissilePropBase_F {
 	
