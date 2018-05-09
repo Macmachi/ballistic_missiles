@@ -6,7 +6,7 @@
 - TILK : Realization of 3D models, import and adaptation of models in arma 3, participation in animation code and particle settings and debugging
 - Mr.H : Creator of the missile launch interface, configuration of objects in arma 3, made the majority of the code with many code improvement and debugging
 
-Credits : 
+[Credits]
 - Source of missile sound : universal-soundbank.com
 - Thanks to Bohemia Interactive 
 
@@ -16,7 +16,7 @@ Credits :
 find here: http://steamcommunity.com/sharedfiles/filedetails/?id=1226877632&searchtext=red+framework
 
 [Acknowledgements]
-Many thanks to the TGV team
+- Many thanks to the TGV team
 
 [[[Remaining Changes]]]
 *Missiles are not suppressed
