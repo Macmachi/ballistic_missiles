@@ -1,6 +1,6 @@
 /*
 Name of the script : A simple _missile animation
-Author : TILK
+Author : TILK (heavily tweaked by Mr H. ;-))
 Credit : Many thanks to the famous Mr.H who contributed a lot to the code and who developed the missile launch interface
 */
 
@@ -11,10 +11,8 @@ _missile = _this select 0;
 systemChat str _missile;
 waitUntil {_missile getVariable ["TILK_MissileLaunch",false];};
 
-_missile say3D "missilelaunchsound"; // audio file duration 39 seconds
-//gestion degat via un trigger qui reste sur place met ce supprime apres 1ou2 seconde si joueur trop pret = mort
+playSound3D ["ballistic_missiles\media\sounds\missilelaunchsound.ogg", _missile, false, getPosASL _missile, 50, 1, 1000]; 
 
-//particle_emitter say3D "missilelaunchsound"; // audio file duration 39 seconds
 
 _emiterpos= _missile modelToWorld (_missile selectionPosition "reactor"); 
 //smoked particle number 1 on ignition of thrusters
@@ -239,54 +237,42 @@ _PS4 setParticleParams
 				[[1,1,1,-0],[1,1,1,-1],[1,1,1,-1],[1,1,1,-1],[1,1,1,-1],[1,1,1,-0]]
 				
 			];
+
+		sleep 1;
+		deleteVehicle _PS1;
+		[_missile] call TILK_fnc_setMissileDamages;
+		_PS4 setDropInterval 0.02;
+
+
+		// animation starts here
+		// le scope suivant est executé en parallèle
+		_missile setVelocity [0,0,10];
+		[_missile] spawn {
+		params ["_missile"];
 			
-_a = 1; //iniatialize our variable allowing to control the animation 
-
-/*Start animation*/
-while {_a < 4000} //total duration of the animation (a = a+1 every 0.001 second)
-
-		do { 
+			//augmentation exponentielle de la vélocité du missile pendant 200 itérations
+			_startVelocity = 1;
+			for "_i" from 1 to 200 do 
+			{
+			
+			_missile setVelocity (velocity _missile vectorAdd [0,0,_startVelocity * _i]);
+			sleep 0.1;
+			hint format ["Loop %1 vel %2",str _i, str velocity _missile];
+			};
+			
+		waitUntil {(getPosATL _missile) select 0 > 2000}; // attend que le missile ait atteint les 2000m d'altitude au dessus du sol, supprime le missile
+		deleteVehicle _missile;
+		};
+		/// fin du scope de mouvement
 		
-		//Check if fire particle number 2 can start
-	    if (_check == 1) then {
-	    _PS4 setDropInterval 0.02;
-	    };		
-		//Camera effect 
-		if (_a==2) then {
-		deleteVehicle _PS1; //delete smoked particle number 1 on ignition of thrusters 
-		addCamShake [5, 2, 25]; // POUR H possible de faire en sorte que la caméra shake seulement pour les joueurs qui sont dans les 500m-1km? du lancement
-		};
-		//Moves the object on the z axis
-		if (_a < 300) then {
-		_missile setPos (getPos _missile vectorAdd [0,0,0.1]);
-		sleep 0.001;
-		_a = _a+1;
-		hintSilent str _a; // debug
-		};
-		if (_a==290) then {
-		//Fire particule number 2 (start)
-		_check = 1;
-		};	
-		if (_a==460) then {
-	    //Fire particule number 2 (stopped)
-		_check = 0;
-		//Fire particule number 2 (deleted)
+		// le scope suivant est executé en parallèle et détruit PS4 quand le missile atteint les 100m
+		[_PS4,_missile] spawn {
+		params ["_PS4","_missile"];
+		waitUntil {(getPosATL _missile) select 0 > 100};
 		deleteVehicle _PS4;
-		addCamShake [10, 2, 25]; // POUR H possible de faire en sorte que la caméra shake seulement pour les joueurs qui sont dans les 500m-1km? du lancement
-		};	
-		//Acceleration	
-		if (_a >= 300) then {
-		_missile setPos (getPos _missile vectorAdd [0,0,0.18]);
-		sleep 0.001;
-		_a = _a+1;
-		hintSilent str _a; // debug
 		};
-		/*End animation*/
-		if (_a == 4000) then {
-		deleteVehicle _missile; // delete missile (that delete particles too)
-		hint "End of animation"; // debug
-		};
-
-}; //Close the loop
-
+		
+		
+		
+///fin de la fonction
 };
