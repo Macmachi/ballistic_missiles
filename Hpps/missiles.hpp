@@ -1,181 +1,92 @@
 allTILKBallisticMissiles[]={"shahab3","iskander_9K720","minuteman_2"};//ajouter les noms de classe de tes missiles ici si tu en crées de nouveaux
-class Wreck_base_F;
+class Land_CampingChair_V2_F;
 
 /* Shahab 3 */
-
-class shahab3: Wreck_base_F {
+class MissilePropBase_F : Land_CampingChair_V2_F {
 	author = "TILK";
 	mapSize = 4;
-	class SimpleObject {
-		eden = 0;
-		animate[] = {};
-		hide[] = {};
-		verticalOffset = 0.829;
-		verticalOffsetWorld = 0;
-		init = "''";
+
+	
+
+	scope = 0;
+	scopeCurator = 0;
+
+	icon = "iconObject_1x2";
+    editorCategory = "EdCat_missiles";
+    
+	destrType = "DestructBuilding";
+	cost = 0;
+	accuracy = 1000;
+	class AttributeValues {
+		objectIsSimple = 0;
 	};
+	
+	// Strategic
+	side = 3;
+	armor = 250;
+	ladders[] = {};
+	// Building
+	//nameSound = "obj_building";
+	// Static
+	reversed = 0;
+	hasDriver = 0;
+	audible = 0;
+	//simulation = "house";
+	class DestructionEffects {};
+	picture = "pictureStaticObject";
+	weapons[] = {};
+	magazines[] = {};
+	irTarget = 0;
+	type = 1;
+	threat[] = {0, 0, 0};
+	maxSpeed = 0;
+	coefInside = 2;
+	coefInsideHeur = 2;
+	coefSpeedInside = 2;
+	windSockExist = 0;
+	countsForScoreboard = 0;
+	class EventHandlers {
+		init = "_this call TILK_fnc_ignition;";
+		class CBA_Extended_EventHandlers {};
+	};
+	
+};
+class shahab3: MissilePropBase_F {
+
 	editorPreview = "\Ballistic_missiles\media\icons\shahab3_icon.paa";
-	//_generalMacro = "Land_Wreck_BMP2_F";
 	scope = 2;
 	scopeCurator = 2;
 	displayName = "Shahab 3";
 	model = "\Ballistic_missiles\objects\shahab3.p3d";
 	icon = "iconObject_1x2";
-    editorCategory = "EdCat_missiles";
     editorSubcategory = "EdSubcat_missiles_country_iran";
-	destrType = "DestructBuilding";
-	cost = 0;
-	accuracy = 1000;
-	class AttributeValues {
-		objectIsSimple = 0;
-	};
-	
-	// Strategic
-	side = 3;
-	armor = 250;
-	ladders[] = {};
-	// Building
-	nameSound = "obj_building";
-	// Static
-	reversed = 0;
-	hasDriver = 0;
-	audible = 0;
-	simulation = "house";
-	class DestructionEffects {};
-	picture = "pictureStaticObject";
-	weapons[] = {};
-	magazines[] = {};
-	irTarget = 0;
-	type = 1;
-	threat[] = {0, 0, 0};
-	maxSpeed = 0;
-	coefInside = 2;
-	coefInsideHeur = 2;
-	coefSpeedInside = 2;
-	windSockExist = 0;
-	countsForScoreboard = 0;
-	class EventHandlers {
-		init = "_this call TILK_fnc_ignition;";
-		class CBA_Extended_EventHandlers {};
-	};
-	
-};
-/* Iskander_9K720 */
 
-class iskander_9K720: Wreck_base_F {
-	author = "TILK";
-	mapSize = 4;
-	class SimpleObject {
-		eden = 0;
-		animate[] = {};
-		hide[] = {};
-		verticalOffset = 0.829;
-		verticalOffsetWorld = 0;
-		init = "''";
-	};
+};
+
+
+class iskander_9K720: MissilePropBase_F {
+	
 	editorPreview = "\Ballistic_missiles\media\icons\iskander_9K720_icon.paa";
-	//_generalMacro = "Land_Wreck_BMP2_F";
 	scope = 2;
 	scopeCurator = 2;
 	displayName = "Iskander 9K720 (SS-26 Stone)";
 	model = "\Ballistic_missiles\objects\iskander_9K720.p3d";
 	icon = "iconObject_1x2";
-    editorCategory = "EdCat_missiles";
     editorSubcategory = "EdSubcat_missiles_country_russia";
-	destrType = "DestructBuilding";
-	cost = 0;
-	accuracy = 1000;
-	class AttributeValues {
-		objectIsSimple = 0;
-	};
-	
-	// Strategic
-	side = 3;
-	armor = 250;
-	ladders[] = {};
-	// Building
-	nameSound = "obj_building";
-	// Static
-	reversed = 0;
-	hasDriver = 0;
-	audible = 0;
-	simulation = "house";
-	class DestructionEffects {};
-	picture = "pictureStaticObject";
-	weapons[] = {};
-	magazines[] = {};
-	irTarget = 0;
-	type = 1;
-	threat[] = {0, 0, 0};
-	maxSpeed = 0;
-	coefInside = 2;
-	coefInsideHeur = 2;
-	coefSpeedInside = 2;
-	windSockExist = 0;
-	countsForScoreboard = 0;
-	class EventHandlers {
-		init = "_this call TILK_fnc_ignition;";
-		class CBA_Extended_EventHandlers {};
-	};
 	
 };
 
-/* Minuteman 2 */
 
-class minuteman_2: Wreck_base_F {
-	author = "TILK";
-	mapSize = 4;
-	class SimpleObject {
-		eden = 0;
-		animate[] = {};
-		hide[] = {};
-		verticalOffset = 0.829;
-		verticalOffsetWorld = 0;
-		init = "''";
-	};
+
+class minuteman_2: MissilePropBase_F {
+	
 	editorPreview = "\Ballistic_missiles\media\icons\minuteman_2_icon.paa";
-	//_generalMacro = "Land_Wreck_BMP2_F";
 	scope = 2;
 	scopeCurator = 2;
 	displayName = "Minuteman II";
 	model = "\Ballistic_missiles\objects\minuteman_2.p3d";
 	icon = "iconObject_1x2";
-    editorCategory = "EdCat_missiles";
     editorSubcategory = "EdSubcat_missiles_country_usa";
-	destrType = "DestructBuilding";
-	cost = 0;
-	accuracy = 1000;
-	class AttributeValues {
-		objectIsSimple = 0;
-	};
 	
-	// Strategic
-	side = 3;
-	armor = 250;
-	ladders[] = {};
-	// Building
-	nameSound = "obj_building";
-	// Static
-	reversed = 0;
-	hasDriver = 0;
-	audible = 0;
-	simulation = "house";
-	class DestructionEffects {};
-	picture = "pictureStaticObject";
-	weapons[] = {};
-	magazines[] = {};
-	irTarget = 0;
-	type = 1;
-	threat[] = {0, 0, 0};
-	maxSpeed = 0;
-	coefInside = 2;
-	coefInsideHeur = 2;
-	coefSpeedInside = 2;
-	windSockExist = 0;
-	countsForScoreboard = 0;
-	class EventHandlers {
-		init = "_this call TILK_fnc_ignition;";
-		class CBA_Extended_EventHandlers {};
-	};
 	
 };
