@@ -8,7 +8,8 @@ _missile = _this select 0;
 systemChat str _missile;
 waitUntil {_missile getVariable ["TILK_MissileLaunch",false];};
 
-playSound3D ["ballistic_missiles\media\sounds\missilelaunchsound.ogg", _missile, false, getPosASL _missile, 50, 1, 3000]; 
+//play the sound during takeoff
+playSound3D ["ballistic_missiles\media\sounds\missilelaunchsound.ogg", _missile, false, getPosASL _missile, 50, 1, 3000]; //can be heard up to 3km 
 
 _emiterpos= _missile modelToWorld (_missile selectionPosition "reactor"); 
 //smoked particle number 1 on ignition of thrusters
@@ -231,7 +232,7 @@ _PS4 setParticleParams [
 
 		sleep 1; //1 second break 
 		
-		deleteVehicle _PS1;
+		deleteVehicle _PS1; //delete smoked particle (number 1) on ignition of thrusters
 		[_missile] call TILK_fnc_setMissileDamages;
 		_PS4 setDropInterval 0.02;
 
@@ -245,7 +246,6 @@ _PS4 setParticleParams [
 			_startVelocity = 1;
 			for "_i" from 1 to 200 do 
 			{
-			
 			_missile setVelocity (velocity _missile vectorAdd [0,0,_startVelocity * _i]);
 			sleep 0.1;
 			//hint format ["Loop %1 vel %2",str _i, str velocity _missile]; //debug
@@ -263,8 +263,6 @@ _PS4 setParticleParams [
 		waitUntil {(getPosATL _missile) select 0 > 100};
 		deleteVehicle _PS4;
 		};
-		
-		
 		
 ///end of function
 };

@@ -13,6 +13,7 @@ class CfgPatches {
 
 #include "\Ballistic_missiles\InterfaceHpps\defines.hpp"
 #include "\Ballistic_missiles\InterfaceHpps\interface.hpp"
+
 class cfgFunctions
 {
 #include "\Ballistic_missiles\Functions\functions.hpp"
@@ -45,12 +46,5 @@ class CfgEditorSubcategories
 		displayName = "USA"; // Name visible in the list
 	};		
 };
-
-/////=========cfgSounds==========
-class CfgSounds
-{
-	#include "Hpps\cfgsounds.hpp"
-};
-
 
 

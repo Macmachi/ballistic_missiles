@@ -21,7 +21,6 @@ Many thanks to the TGV team
 [[[Remaining Changes]]]
 *Missiles are not suppressed
 *Supression des images et des noms de missiles tirés dans l'interface de lancement
-*Remove messages for debugging (shape, nom missile dans l'editeur + delete a la fin de l'animation)
-
-*degat?
+*Remove messages for debugging (shape, nom missile dans l'editeur + "deleted missile" a la fin de l'animation)
+*Degats au joueur test!
 
