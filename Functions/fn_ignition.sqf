@@ -9,7 +9,7 @@ systemChat str _missile;
 waitUntil {_missile getVariable ["TILK_MissileLaunch",false];};
 
 //play the sound during takeoff
-playSound3D ["ballistic_missiles\media\sounds\missilelaunchsound.ogg", _missile, false, getPosASL _missile, 50, 1, 3000]; //can be heard up to 3km 
+playSound3D ["ballistic_missiles\media\sounds\missilelaunchsound.ogg", _missile, false, getPosASL _missile, 10, 1, 3000]; //can be heard up to 3km 
 
 _emiterpos= _missile modelToWorld (_missile selectionPosition "reactor"); 
 //smoked particle number 1 on ignition of thrusters
