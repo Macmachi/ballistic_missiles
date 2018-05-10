@@ -45,12 +45,6 @@
 [List of changes]
 -----------------------------------------------------------------------
 V1.0 - May 2018 : initial release
-
-Bugs restant à corriger :
-*Missiles are not suppressed + PS4 pas supprimer non plus 
-*Appliquer degats AI et objet
-*Supression des images et des noms de missiles quand missile tiré
-*Remove messages for debugging (shape, nom missile dans l'editeur + "deleted missile" a la fin de l'animation)
 -----------------------------------------------------------------------
 
 
