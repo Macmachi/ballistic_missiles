@@ -5,7 +5,7 @@ generates particles and animates the missile (is mp compatible)
 0 = _this spawn {
 
 _missile = _this select 0;
-systemChat str _missile;
+
 waitUntil {_missile getVariable ["TILK_MissileLaunch",false];};
 
 //play the sound during takeoff
@@ -16,7 +16,7 @@ _emiterpos= _missile modelToWorld (_missile selectionPosition "reactor");
 
 //smoked particle number 1 on ignition of thrusters
 _PS1 = "#particlesource" createVehicleLocal _emiterpos;
-systemChat str _PS1;
+//systemChat str _PS1;
 _PS1 setParticleCircle [0, [0, 0, 0]];
 _PS1 setParticleRandom [0, [10, 10, 2], [0.5, 0.5, 0], 0, 0.25, [0.05, 0.05, 0.05, 0.05], 0, 0];
 _PS1 setParticleParams [

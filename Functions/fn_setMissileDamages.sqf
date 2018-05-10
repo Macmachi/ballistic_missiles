@@ -11,7 +11,7 @@ params ["_missile"];
 	_hasAce = false;
 	if ("ace_common" in activatedAddons) then {_hasAce = true};
 	_distance = player distance _missile;
-	systemChat str _distance;
+
 	if (_distance >3000) ExitWith {};//no effect felt if beyond 3km
 	_damage = 10/_distance;
 	_camshakeStrength = 1000/_distance;
