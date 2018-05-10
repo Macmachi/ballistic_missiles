@@ -139,7 +139,7 @@ class minuteman_2: MissilePropBase_F {
 
 class iskander_launchpad1: LauncherPropBase_F {
 	
-	editorPreview = "\Ballistic_missiles\media\icons\iskander_launchpad1_icon";
+	editorPreview = "\Ballistic_missiles\media\icons\iskander_launchpad1_icon.paa";
 	scope = 1;
 	scopeCurator = 2;
 	displayName = "iskander launchpad 1";
