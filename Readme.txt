@@ -5,14 +5,13 @@
 -----------------------------------------------------------------------
 [Authors] 
 -----------------------------------------------------------------------
-- TILK : Realization of 3D models, import and adaptation of models in arma 3, participation in   animation code and particle settings and debugging
-- Mr.H : Creator of the missile launch interface, configuration of objects in arma 3, made the   majority of the code with many code improvement and debugging
+- TILK : Realization of 3D models, import and adaptation of models in arma 3, participation in     animation code and particle settings and debugging
+- Mr.H : Creator of the missile launch interface, configuration of objects in arma 3, made the     majority of the code with many code improvement and debugging
 -----------------------------------------------------------------------
 [Features]
 -----------------------------------------------------------------------
 - Use ballistic missiles to create original and impressive missions (missiles cannot be used as a   weapon)
 - Basic launch interface provided
-
 - Single player and multiplayer compatible (tested on dedicated server)
 
 - Low resource consumption animation
@@ -28,7 +27,7 @@ Risk of injury or death if you are within 100m of the missile during launch (dam
 - Method 1 : You can launch the missile with an interface by adding this function in the init of the   object by using its variable name. 
   For example, a laptop object with the variable name laptop1 : 
   [laptop1] call TILK_fnc_isMissileLauncherInterface;
-- Method 2 : Launch the missile by giving a variable name to the missile, you can put this function   in a trigger or an addaction.
+- Method 2 : Launch the missile by giving a variable name to the missile, you can put this function    in a trigger or an addaction.
   For example, a missile object with the variable name missile1 : 
   [missile1] call TILK_fnc_launchMissile;
 -----------------------------------------------------------------------
