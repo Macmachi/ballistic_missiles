@@ -1,4 +1,4 @@
-allTILKBallisticMissiles[]={"shahab3","iskander_9K720","minuteman_2"};//add the missile class names here if new
+allTILKBallisticMissiles[]={"shahab3","iskander_9K720","minuteman_2","iskander_launchpad1"};//add the missile class names here if new
 class Land_CampingChair_V2_F;
 
 /* Shahab 3 */
@@ -83,6 +83,19 @@ class minuteman_2: MissilePropBase_F {
 	model = "\Ballistic_missiles\objects\minuteman_2.p3d";
 	icon = "iconObject_1x2";
     editorSubcategory = "EdSubcat_missiles_country_usa";
+	
+	
+};
+
+class iskander_launchpad1: MissilePropBase_F {
+	
+	editorPreview = "\Ballistic_missiles\media\icons\iskander_9K720_icon.paa";
+	scope = 2;
+	scopeCurator = 2;
+	displayName = "iskander launchpad 1";
+	model = "\Ballistic_missiles\objects\iskander_launchpad1.p3d";
+	icon = "iconObject_1x2";
+    editorSubcategory = "EdSubcat_missiles_country_russia";
 	
 	
 };

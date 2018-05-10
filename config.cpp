@@ -3,7 +3,8 @@ class CfgPatches {
         units[] = {
 		"shahab3",
 		"iskander_9K720",
-		"minuteman_2"
+		"minuteman_2",
+		"iskander_launchpad1"
         }; 
         weapons[] = {}; 
         requiredVersion = 1; 
