@@ -142,7 +142,7 @@ class iskander_launchpad1: LauncherPropBase_F {
 	editorPreview = "\Ballistic_missiles\media\icons\iskander_launchpad1_icon.paa";
 	scope = 1;
 	scopeCurator = 2;
-	displayName = "iskander launchpad 1";
+	displayName = "Iskander launchpad 1";
 	model = "\Ballistic_missiles\objects\iskander_launchpad1.p3d";
 	icon = "iconObject_1x2";
     editorSubcategory = "EdSubcat_missiles_country_russia";
