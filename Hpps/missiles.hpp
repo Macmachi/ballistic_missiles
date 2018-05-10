@@ -6,20 +6,16 @@ class Wreck_base_F;
 class MissilePropBase_F : Land_CampingChair_V2_F {
 	author = "TILK";
 	mapSize = 4;
-
 	scope = 0;
 	scopeCurator = 0;
-
 	icon = "iconObject_1x2";
     editorCategory = "EdCat_missiles";
-    
 	destrType = "DestructBuilding";
 	cost = 0;
 	accuracy = 1000;
 	class AttributeValues {
 		objectIsSimple = 0;
 	};
-	
 	// Strategic
 	side = 3;
 	armor = 250;
@@ -62,15 +58,10 @@ class LauncherPropBase_F: Wreck_base_F {
 		verticalOffsetWorld = 0;
 		init = "''";
 	};
-	editorPreview = "\Ballistic_missiles\media\icons\shahab3_icon.paa";
-	//_generalMacro = "Land_Wreck_BMP2_F";
 	scope = 2;
 	scopeCurator = 2;
-	displayName = "Shahab 3";
-	model = "\Ballistic_missiles\objects\shahab3.p3d";
 	icon = "iconObject_1x2";
     editorCategory = "EdCat_missiles";
-    editorSubcategory = "EdSubcat_missiles_country_iran";
 	destrType = "DestructBuilding";
 	cost = 0;
 	accuracy = 1000;

@@ -8,11 +8,8 @@ _missile = _this select 0;
 systemChat str _missile;
 waitUntil {_missile getVariable ["TILK_MissileLaunch",false];};
 
-//check missile position
-if ((vectorUp _missile select 2) >=  0.98 && (vectorUp _missile select 2) <=  1.02) then {
-
 //play the sound during takeoff
-playSound3D ["ballistic_missiles\media\sounds\missilelaunchsound.ogg", _missile, false, getPosASL _missile, 5, 1, 3000]; //can be heard up to 3km 
+playSound3D ["ballistic_missiles\media\sounds\missilelaunchsound.ogg", _missile, false, getPosASL _missile, 5, 1, 3000]; //can be heard up to 3kms 
 
 //recovers the position of the object's mem (reactor)
 _emiterpos= _missile modelToWorld (_missile selectionPosition "reactor"); 
@@ -49,8 +46,8 @@ _PS1 setParticleParams [
 				[8,8,8,0], 
 				//color, /*Array of Array of RGBA Numbers*/
 				[[4, 5, 10, 10]],
-			   //animationSpeed, /*Array of Number*/
-			   [1,0.5],
+			    //animationSpeed, /*Array of Number*/
+			    [1,0.5],
 				//randomDirectionPeriod, /*Number*/
 				1,
 				//randomDirectionIntensity, /*Number*/
@@ -107,7 +104,7 @@ _PS2 setParticleParams [
 				[2,2,2,0], 
 				//color, /*Array of Array of RGBA Numbers*/
 				[[4, 5, 10, 10]],
-			   //animationSpeed, /*Array of Number*/
+			    //animationSpeed, /*Array of Number*/
 			    [1,0.5],
 				//randomDirectionPeriod, /*Number*/
 				0,
@@ -252,29 +249,22 @@ _PS4 setParticleParams [
 			for "_i" from 1 to 200 do 
 			{
 			_missile setVelocity [(vectorUp _missile select 0)*_i,(vectorUp _missile select 1) *_i,(vectorUp _missile select 2)*_i];
-			//_missile setVelocity (velocity _missile vectorAdd [0,0,_startVelocity * _i]);
 			sleep 0.1;
-			hint format ["Loop %1 vel %2",str _i, str velocity _missile];
+			//hint format ["Loop %1 vel %2",str _i, str velocity _missile];
 			
 			};
 			
-		sleep 39; // waits 20 secs and deletes the missile
+		sleep 39; // waits 39 secs and deletes the missile
 		deleteVehicle _missile;
-		hint "destroyed missile" //debug
 		};
 		///end of motion scope
 		
 		//the following scope is executed in parallel and destroyed PS4 when the missile reaches 100m
 		[_PS4,_missile] spawn {
 		params ["_PS4","_missile"];
-		sleep 39; //waits 20 secs and deletes particles
+		sleep 6; //waits 6 secs and deletes particles
 		deleteVehicle _PS4;
 		};
-		}//end of condition for orientation
-		
-else {
-hint "Launch impossible for this missile. Orientation must be vertical!"
-};
 		
 ///end of function
 };
