@@ -5,12 +5,12 @@
 -----------------------------------------------------------------------
 [Authors] 
 -----------------------------------------------------------------------
-- TILK : Realization of 3D models, import and adaptation of models in arma 3, participation in     animation code and particle settings and debugging
-- Mr.H : Creator of the missile launch interface, configuration of objects in arma 3, made the     majority of the code with many code improvement and debugging
+- TILK : Realization of 3D models, import and adaptation of models in arma 3, participation in animation code and particle settings and debugging
+- Mr.H : Creator of the missile launch interface, configuration of objects in arma 3, made the majority of the code with many code improvement and debugging
 -----------------------------------------------------------------------
 [Features]
 -----------------------------------------------------------------------
-- Use ballistic missiles to create original and impressive missions (missiles cannot be used as a   weapon)
+- Use ballistic missiles to create original and impressive missions (missiles cannot be used as a weapon)
 - Basic launch interface provided
 - Single player and multiplayer compatible (tested on dedicated server)
 - Low resource consumption animation
@@ -34,8 +34,8 @@
 -----------------------------------------------------------------------
 [Advertising]
 -----------------------------------------------------------------------
-- You can download Mr.H's famous satellite mod for arma 3, here :   https://steamcommunity.com/sharedfiles/filedetails/?id=1310581330 
-- If you are mission maker my comrade RedBelette develops a mission framework that you 
+- You can download Mr.H's famous satellite mod for Arma 3, here :   https://steamcommunity.com/sharedfiles/filedetails/?id=1310581330 
+- If you are mission maker my comrade RedBelette develops a mission framework for Arma 3 that you 
   find here: http://steamcommunity.com/sharedfiles/filedetails/?id=1226877632&searchtext=red+framework
 -----------------------------------------------------------------------
 [Acknowledgements]
