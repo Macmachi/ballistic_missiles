@@ -50,14 +50,11 @@ Risk of injury or death if you are within 100m of the missile during launch (dam
 -----------------------------------------------------------------------
 V1.0 - May 2018 : initial release
 
-Restant à corriger :
-*Missiles are not suppressed
-*Appliquer degats AI et objet (ca dure cmb de temps ca ? Sachant que la fusee reste pas longtemps au sol)
-*Réduire le temps de tremblement de la caméra surtout quand on est prêt ?
-*Supression des images et des noms de missiles tirés dans l'interface de lancement
+Bugs restant à corriger :
+*Missiles are not suppressed + PS4 pas supprimer non plus 
+*Appliquer degats AI et objet
+*Supression des images et des noms de missiles quand missile tiré
 *Remove messages for debugging (shape, nom missile dans l'editeur + "deleted missile" a la fin de l'animation)
-*Au moment du lancement remettre le missile droit ou sinon empecher son lancement si rotation superieur a 10° 
-*Créer nouvelle branche realease et décommenter ???
 -----------------------------------------------------------------------
 
 

@@ -8,10 +8,15 @@ _missile = _this select 0;
 systemChat str _missile;
 waitUntil {_missile getVariable ["TILK_MissileLaunch",false];};
 
-//play the sound during takeoff
-playSound3D ["ballistic_missiles\media\sounds\missilelaunchsound.ogg", _missile, false, getPosASL _missile, 10, 1, 3000]; //can be heard up to 3km 
+//check missile position
+if ((vectorUp _missile select 2) >=  0.98 && (vectorUp _missile select 2) <=  1.02) then {
 
+//play the sound during takeoff
+playSound3D ["ballistic_missiles\media\sounds\missilelaunchsound.ogg", _missile, false, getPosASL _missile, 5, 1, 3000]; //can be heard up to 3km 
+
+//recovers the position of the object's mem (reactor)
 _emiterpos= _missile modelToWorld (_missile selectionPosition "reactor"); 
+
 //smoked particle number 1 on ignition of thrusters
 _PS1 = "#particlesource" createVehicleLocal _emiterpos;
 systemChat str _PS1;
@@ -263,6 +268,11 @@ _PS4 setParticleParams [
 		waitUntil {(getPosATL _missile) select 0 > 100};
 		deleteVehicle _PS4;
 		};
+		}//end of condition for orientation
+		
+else {
+hint "Launch impossible for this missile. Orientation must be vertical!"
+};
 		
 ///end of function
 };
