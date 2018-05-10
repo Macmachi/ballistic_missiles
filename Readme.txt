@@ -3,7 +3,7 @@
 [NOTICE] If you use things from this mod you have to credit us!
 
 -----------------------------------------------------------------------
-[Authors of Ballistic missiles mod for Arma 3] 
+[Authors] 
 -----------------------------------------------------------------------
 - TILK : Realization of 3D models, import and adaptation of models in arma 3, participation in   animation code and particle settings and debugging
 - Mr.H : Creator of the missile launch interface, configuration of objects in arma 3, made the   majority of the code with many code improvement and debugging
