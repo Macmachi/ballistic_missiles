@@ -251,12 +251,14 @@ _PS4 setParticleParams [
 			_startVelocity = 1;
 			for "_i" from 1 to 200 do 
 			{
-			_missile setVelocity (velocity _missile vectorAdd [0,0,_startVelocity * _i]);
+			_missile setVelocity [(vectorUp _missile select 0)*_i,(vectorUp _missile select 1) *_i,(vectorUp _missile select 2)*_i];
+			//_missile setVelocity (velocity _missile vectorAdd [0,0,_startVelocity * _i]);
 			sleep 0.1;
-			//hint format ["Loop %1 vel %2",str _i, str velocity _missile]; //debug
+			hint format ["Loop %1 vel %2",str _i, str velocity _missile];
+			
 			};
 			
-		waitUntil {(getPosATL _missile) select 0 > 2000}; // waits until the missile has reached 2000m above ground level, removes the missile
+		sleep 39; // waits 20 secs and deletes the missile
 		deleteVehicle _missile;
 		hint "destroyed missile" //debug
 		};
@@ -265,7 +267,7 @@ _PS4 setParticleParams [
 		//the following scope is executed in parallel and destroyed PS4 when the missile reaches 100m
 		[_PS4,_missile] spawn {
 		params ["_PS4","_missile"];
-		waitUntil {(getPosATL _missile) select 0 > 100};
+		sleep 39; //waits 20 secs and deletes particles
 		deleteVehicle _PS4;
 		};
 		}//end of condition for orientation

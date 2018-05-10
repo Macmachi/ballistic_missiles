@@ -11,4 +11,5 @@ _missileToLaunch ="";
 {
 if (str _x == _missileSTR) then {_missileToLaunch = _x};
 } forEach _allMissiles;
+lbDelete [1500, _index]; 
 [_missileToLaunch] call TILK_fnc_launchMissile;
