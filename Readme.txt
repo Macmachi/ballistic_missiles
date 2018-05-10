@@ -14,7 +14,7 @@
 - Basic launch interface provided
 - Single player and multiplayer compatible (tested on dedicated server)
 - Low resource consumption animation
-- Risk of injury or death if you are within 100m of the missile during launch (damage also   compatible with Ace)
+- Risk of injury or death if you are within 100m of the missile during launch (damage also compatible with Ace)
 -----------------------------------------------------------------------
 [How to use this mod]
 -----------------------------------------------------------------------
