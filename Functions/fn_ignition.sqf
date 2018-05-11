@@ -14,6 +14,13 @@ playSound3D ["ballistic_missiles\media\sounds\missilelaunchsound.ogg", _missile,
 //recovers the position of the object's mem (reactor)
 _emiterpos= _missile modelToWorld (_missile selectionPosition "reactor"); 
 
+//illuminates the bottom of the rocket simulates flame color (during the night)
+_lightBooster = "#lightpoint" createVehicleLocal _emiterpos; 
+_lightBooster setLightBrightness 2; 
+_lightBooster setLightAmbient [2.55, 1.02, 0.51]; 
+_lightBooster setLightColor [2.55, 1.02, 0.51]; 
+_lightBooster lightAttachObject [_missile, _missileModelToWorld ( _missile selectionPosition "reactor")]; 
+
 //smoked particle number 1 on ignition of thrusters
 _PS1 = "#particlesource" createVehicleLocal _emiterpos;
 //systemChat str _PS1;
@@ -255,13 +262,14 @@ _PS4 setParticleParams [
 			};
 			
 		sleep 39; // waits 39 secs and deletes the missile
+		deleteVehicle _lightBooster;
 		deleteVehicle _missile;
 		};
 		///end of motion scope
 		
 		//the following scope is executed in parallel and destroyed PS4 when the missile reaches 100m
-		[_PS4,_missile] spawn {
-		params ["_PS4","_missile"];
+		[_PS4,_missile,_lightBooster] spawn {
+		params ["_PS4","_missile","_lightBooster"];
 		sleep 6; //waits 6 secs and deletes particles
 		deleteVehicle _PS4;
 		};
