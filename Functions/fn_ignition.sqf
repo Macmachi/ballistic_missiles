@@ -14,7 +14,7 @@ playSound3D ["ballistic_missiles\media\sounds\missilelaunchsound.ogg", _missile,
 //recovers the position of the object's mem (reactor)
 _emiterpos= _missile modelToWorld (_missile selectionPosition "reactor"); 
 
-//illuminates the bottom of the rocket simulates flame color (during the night)
+//illuminates the bottom of the rocket and simulates flame color (during the night)
 _lightBooster = "#lightpoint" createVehicleLocal _emiterpos; 
 _lightBooster setLightBrightness 2; 
 _lightBooster setLightAmbient [2.55, 1.02, 0.51]; 
@@ -248,8 +248,8 @@ _PS4 setParticleParams [
 		//animation starts here
 		//the following scope is executed in parallel
 		_missile setVelocity [0,0,10];
-		[_missile] spawn {
-		params ["_missile"];
+		[_missile,_lightbooster] spawn {
+		params ["_missile","_lightBooster"];
 			
 			//exponential increase of the velocity of the missile during 200 iterations
 			_startVelocity = 1;
@@ -268,8 +268,8 @@ _PS4 setParticleParams [
 		///end of motion scope
 		
 		//the following scope is executed in parallel and destroyed PS4 when the missile reaches 100m
-		[_PS4,_missile,_lightBooster] spawn {
-		params ["_PS4","_missile","_lightBooster"];
+		[_PS4] spawn {
+		params ["_PS4"];
 		sleep 6; //waits 6 secs and deletes particles
 		deleteVehicle _PS4;
 		};
