@@ -19,7 +19,7 @@ _lightBooster = "#lightpoint" createVehicleLocal _emiterpos;
 _lightBooster setLightBrightness 2; 
 _lightBooster setLightAmbient [2.55, 1.02, 0.51]; 
 _lightBooster setLightColor [2.55, 1.02, 0.51]; 
-_lightBooster lightAttachObject [_missile, _missileModelToWorld ( _missile selectionPosition "reactor")]; 
+_lightBooster lightAttachObject [_missile, (_missile ModelToWorld (_missile selectionPosition "reactor"))]; 
 
 //smoked particle number 1 on ignition of thrusters
 _PS1 = "#particlesource" createVehicleLocal _emiterpos;
