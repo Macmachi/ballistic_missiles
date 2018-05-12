@@ -1,5 +1,5 @@
 /*
-sets damage and camshake proportionally to the player's distance to the missile, is mp compatible
+* sets damage and camshake proportionally to the player's distance to the missile, is mp compatible
 */
 
 params ["_missile"];

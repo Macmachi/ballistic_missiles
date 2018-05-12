@@ -17,11 +17,11 @@ class CfgPatches {
 
 class cfgFunctions
 {
-#include "\Ballistic_missiles\Functions\functions.hpp"
+	#include "\Ballistic_missiles\Functions\functions.hpp"
 };
 class cfgVehicles
 {
-#include"\Ballistic_missiles\Hpps\missiles.hpp"
+	#include"\Ballistic_missiles\Hpps\missiles.hpp"
 };
 
 class CfgEditorCategories

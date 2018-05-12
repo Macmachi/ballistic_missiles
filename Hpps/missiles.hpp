@@ -44,7 +44,6 @@ class MissilePropBase_F : Land_CampingChair_V2_F {
 		init = "_this call TILK_fnc_ignition;";
 		class CBA_Extended_EventHandlers {};
 	};
-	
 };
 //config launchers
 class LauncherPropBase_F: Wreck_base_F {
@@ -68,7 +67,6 @@ class LauncherPropBase_F: Wreck_base_F {
 	class AttributeValues {
 		objectIsSimple = 0;
 	};
-	
 	// Strategic
 	side = 3;
 	armor = 250;

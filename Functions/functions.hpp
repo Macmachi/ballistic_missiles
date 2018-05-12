@@ -3,8 +3,8 @@ class TILK // Defines the "owner"
 	
 		class TILKBallisticMissiles// category
 	{
-	tag = "TILK";
-	file = "\Ballistic_missiles\Functions";
+		tag = "TILK";
+		file = "\Ballistic_missiles\Functions";
 		class ignition
 		{};
 		class launchMissile
