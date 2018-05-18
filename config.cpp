@@ -5,6 +5,7 @@ class CfgPatches {
 		"iskander_9K720",
 		"minuteman_2",
 		"iskander_launchpad1"
+		"v2"
         }; 
         weapons[] = {}; 
         requiredVersion = 1; 
@@ -45,6 +46,10 @@ class CfgEditorSubcategories
 	class EdSubcat_missiles_country_usa // Category class, you point to it in editorSubcategory property
 	{
 		displayName = "USA"; // Name visible in the list
+	};	
+	class EdSubcat_missiles_country_germany // Category class, you point to it in editorSubcategory property
+	{
+		displayName = "Germany"; // Name visible in the list
 	};		
 };
 
