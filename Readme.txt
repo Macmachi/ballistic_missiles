@@ -41,3 +41,12 @@
 [Acknowledgements]
 -----------------------------------------------------------------------
 - Many thanks to the TGV team !
+
+A faire lors de la version 1.1 :
+- Ajout du missile V2
+- ajout lanceur statique vertical statique 
+- Finir configuration du launcher pour le islanker (rajouter points de contact et d'orientation?)
+- Ajout d'un silo pour le islanker
+- Module pour désactiver les dégats ? 
+- Permet de lancer un missile via Zeus ?
+- Module de ciblage qui drop missile a 90 degré et le fait péter quand Z = 0?
