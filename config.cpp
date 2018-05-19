@@ -4,7 +4,7 @@ class CfgPatches {
 		"shahab3",
 		"iskander_9K720",
 		"minuteman_2",
-		"iskander_launchpad1"
+		"iskander_launchpad1",
 		"v2"
         }; 
         weapons[] = {}; 
