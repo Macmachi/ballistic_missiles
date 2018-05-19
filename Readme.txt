@@ -42,11 +42,15 @@
 -----------------------------------------------------------------------
 - Many thanks to the TGV team !
 
-A faire lors de la version 1.1 :
-- Ajout du missile V2
-- ajout lanceur statique vertical statique 
-- Finir configuration du launcher pour le islanker (rajouter points de contact et d'orientation?)
-- Ajout d'un silo pour le islanker
+A faire lors de la version v1.1 :
+- Ajout du missile V2 [DONE]
+- ajout lanceur statique vertical statique pour le islanker [DONE]
+- ajout attach islanker ou spawn missile dans lanceur statique 
+- animation personnalisé pour le v2 quand sur lanceur (changement de lanceur)
+- Ajout d'un silo pour le islanker + animation perso pour missile + spawn missile + spawn silo lancé
 - Module pour désactiver les dégats ? 
+
+A faire lors de la version v1.2
 - Permet de lancer un missile via Zeus ?
 - Module de ciblage qui drop missile a 90 degré et le fait péter quand Z = 0?
+- Détruction missile avec lod damage? + explosion
