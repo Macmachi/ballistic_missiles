@@ -18,7 +18,7 @@ class MissilePropBase_F : Land_CampingChair_V2_F {
 	};
 	// Strategic
 	side = 3;
-	armor = 250; 
+	armor = 10;  //250 mis 10 pour test!!!!!!!!!!!!!!
 	ladders[] = {};
 	// Building
 	//nameSound = "obj_building";
@@ -42,9 +42,12 @@ class MissilePropBase_F : Land_CampingChair_V2_F {
 	countsForScoreboard = 0;
 	class EventHandlers {
 		init = "_this call TILK_fnc_ignition;";
+		killed = "_this call (deleteVehicle _this);";
 		class CBA_Extended_EventHandlers {};
 	};
+	
 };
+
 //config launchers
 class LauncherPropBase_F: Wreck_base_F {
 	author = "TILK";
@@ -91,11 +94,6 @@ class LauncherPropBase_F: Wreck_base_F {
 	coefSpeedInside = 2;
 	windSockExist = 0;
 	countsForScoreboard = 0;
-	class EventHandlers {
-		init = "_this call TILK_fnc_ignition;";
-		class CBA_Extended_EventHandlers {};
-	};
-	
 };
 
 // MISSILES
@@ -161,8 +159,19 @@ class iskander_launchpad1: LauncherPropBase_F {
 	model = "\Ballistic_missiles\objects\iskander_launchpad1.p3d";
 	icon = "iconObject_1x2";
     editorSubcategory = "EdSubcat_missiles_country_russia";
+	class EventHandlers {
 		
-};
+		_missile = "iskander_9K720" createVehicle position iskander_launchpad1;
+		
+		params ["_launcher","_missile"];
+		_launcher disableCollisionWith _missile;
+		_selectPosMissile = _missile selectionPosition "contactlauncher";
+		_modelToWorldSelectPosMissile = _missile modelToWorld _selectPosMissile;
+		_offset = _selectPosMissile vectorMultiply -1;
+		_missile attachTo [_launcher,_offset,"contactmissile"];
+		
+		class CBA_Extended_EventHandlers {};
+	};
 
 class v2_launcher1: LauncherPropBase_F {
 	
@@ -173,6 +182,9 @@ class v2_launcher1: LauncherPropBase_F {
 	model = "\Ballistic_missiles\objects\v2_launcher1.p3d";
 	icon = "iconObject_1x2";
     editorSubcategory = "EdSubcat_missiles_country_germany";
-	
+	class EventHandlers {
+	//CODE ICI	
+		class CBA_Extended_EventHandlers {};
+	};
 	
 };
