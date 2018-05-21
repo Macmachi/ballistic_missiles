@@ -163,13 +163,7 @@ class iskander_launchpad1: LauncherPropBase_F {
     editorSubcategory = "EdSubcat_missiles_country_russia";
 	class EventHandlers {
 		/*test*/
-		_missile = "iskander_9K720" createVehicle position iskander_launchpad1;
-		params ["_launcher","_missile"];
-		_launcher disableCollisionWith _missile;
-		_selectPosMissile = _missile selectionPosition "contactlauncher";
-		_modelToWorldSelectPosMissile = _missile modelToWorld _selectPosMissile;
-		_offset = _selectPosMissile vectorMultiply -1;
-		_missile attachTo [_launcher,_offset,"contactmissile"];
+		init = "_this call iskander_launchpad1;";
 		/* fin de test*/
 		class CBA_Extended_EventHandlers {};
 	};
