@@ -18,7 +18,7 @@ class MissilePropBase_F : Land_CampingChair_V2_F {
 	};
 	// Strategic
 	side = 3;
-	armor = 250;
+	armor = 10; // 250 MIS A 10 pour tests!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	ladders[] = {};
 	// Building
 	//nameSound = "obj_building";
