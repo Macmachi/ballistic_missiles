@@ -5,7 +5,9 @@ class CfgPatches {
 		"iskander_9K720",
 		"minuteman_2",
 		"iskander_launchpad1",
-		"v2"
+		"v2",
+		"v2_launcher1a",
+		"v2_launcher1b"
         }; 
         weapons[] = {}; 
         requiredVersion = 1; 

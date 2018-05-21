@@ -1,4 +1,4 @@
-allTILKBallisticMissiles[]={"shahab3","iskander_9K720","minuteman_2","iskander_launchpad1","v2"};//add the missile class names here if new
+allTILKBallisticMissiles[]={"shahab3","iskander_9K720","minuteman_2","iskander_launchpad1","v2","v2_launcher1a","v2_launcher1b"};//add the missile class names here if new
 class Land_CampingChair_V2_F;
 class Wreck_base_F;
 
@@ -98,6 +98,8 @@ class LauncherPropBase_F: Wreck_base_F {
 	
 };
 
+// MISSILES
+
 class shahab3: MissilePropBase_F {
 
 	editorPreview = "\Ballistic_missiles\media\icons\shahab3_icon.paa";
@@ -135,11 +137,26 @@ class minuteman_2: MissilePropBase_F {
 
 };
 
+class v2: MissilePropBase_F {
+	
+	editorPreview = "\Ballistic_missiles\media\icons\iskander_launchpad1_icon.paa";
+	scope = 2; 
+	scopeCurator = 2; 
+	displayName = "V2";
+	model = "\Ballistic_missiles\objects\v2.p3d";
+	icon = "iconObject_1x2";
+    editorSubcategory = "EdSubcat_missiles_country_germany";
+	
+	
+};
+
+// LAUNCHERS
+
 class iskander_launchpad1: LauncherPropBase_F {
 	
 	editorPreview = "\Ballistic_missiles\media\icons\iskander_launchpad1_icon.paa";
-	scope = 2; // We're hiding it in the editor for now
-	scopeCurator = 2; // We're hiding it in the editor for now
+	scope = 2; 
+	scopeCurator = 2; 
 	displayName = "Iskander launchpad 1";
 	model = "\Ballistic_missiles\objects\iskander_launchpad1.p3d";
 	icon = "iconObject_1x2";
@@ -148,13 +165,26 @@ class iskander_launchpad1: LauncherPropBase_F {
 	
 };
 
-class v2: LauncherPropBase_F {
+class v2_launcher1a: LauncherPropBase_F {
 	
 	editorPreview = "\Ballistic_missiles\media\icons\iskander_launchpad1_icon.paa";
-	scope = 2; // We're hiding it in the editor for now
-	scopeCurator = 2; // We're hiding it in the editor for now
-	displayName = "V2";
-	model = "\Ballistic_missiles\objects\v2.p3d";
+	scope = 2; 
+	scopeCurator = 2; 
+	displayName = "V2 launchpad 1";
+	model = "\Ballistic_missiles\objects\v2_launcher1a.p3d";
+	icon = "iconObject_1x2";
+    editorSubcategory = "EdSubcat_missiles_country_germany";
+	
+	
+};
+
+class v2_launcher1b: LauncherPropBase_F {
+	
+	editorPreview = "\Ballistic_missiles\media\icons\iskander_launchpad1_icon.paa";
+	scope = 1; // We're hiding it in the editor for now
+	scopeCurator = 1; // We're hiding it in the editor for now
+	displayName = "V2 launchpad 1b";
+	model = "\Ballistic_missiles\objects\v2_launcher1b.p3d";
 	icon = "iconObject_1x2";
     editorSubcategory = "EdSubcat_missiles_country_germany";
 	
