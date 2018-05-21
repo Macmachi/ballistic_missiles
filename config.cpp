@@ -6,8 +6,7 @@ class CfgPatches {
 		"minuteman_2",
 		"iskander_launchpad1",
 		"v2",
-		"v2_launcher1a",
-		"v2_launcher1b"
+		"v2_launcher1"
         }; 
         weapons[] = {}; 
         requiredVersion = 1; 
@@ -54,5 +53,3 @@ class CfgEditorSubcategories
 		displayName = "Germany"; // Name visible in the list
 	};		
 };
-
-
