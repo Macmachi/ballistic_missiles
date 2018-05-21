@@ -42,7 +42,9 @@ class MissilePropBase_F : Land_CampingChair_V2_F {
 	countsForScoreboard = 0;
 	class EventHandlers {
 		init = "_this call TILK_fnc_ignition;";
+		/*test*/
 		killed = "_this call (deleteVehicle _this);";
+		/* fin de test*/
 		class CBA_Extended_EventHandlers {};
 	};
 	
@@ -160,16 +162,15 @@ class iskander_launchpad1: LauncherPropBase_F {
 	icon = "iconObject_1x2";
     editorSubcategory = "EdSubcat_missiles_country_russia";
 	class EventHandlers {
-		
+		/*test*/
 		_missile = "iskander_9K720" createVehicle position iskander_launchpad1;
-		
 		params ["_launcher","_missile"];
 		_launcher disableCollisionWith _missile;
 		_selectPosMissile = _missile selectionPosition "contactlauncher";
 		_modelToWorldSelectPosMissile = _missile modelToWorld _selectPosMissile;
 		_offset = _selectPosMissile vectorMultiply -1;
 		_missile attachTo [_launcher,_offset,"contactmissile"];
-		
+		/* fin de test*/
 		class CBA_Extended_EventHandlers {};
 	};
 
