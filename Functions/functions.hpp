@@ -19,6 +19,8 @@ class TILK // Defines the "owner"
 		{};
 		class setMissileDamages
 		{};
+		class launchpadAttach
+		{};
 
 	};
 	

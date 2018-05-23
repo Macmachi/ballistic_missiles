@@ -163,7 +163,7 @@ class iskander_launchpad1: LauncherPropBase_F {
     editorSubcategory = "EdSubcat_missiles_country_russia";
 	class EventHandlers {
 		/*test*/
-        init = "['iskander_launchpad1', _this] call fn_launchpad.sqf;";
+        init = "[this, 'iskander_9K720'] call TILK_fnc_launchpadAttach.sqf;";
 		/* fin de test*/
 		class CBA_Extended_EventHandlers {};
 	};
