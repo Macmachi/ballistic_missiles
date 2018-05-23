@@ -6,7 +6,7 @@ class CfgPatches {
 		"minuteman_2",
 		"iskander_launchpad1",
 		"v2",
-		"v2_launcher1"
+		"v2_launchpad1"
         }; 
         weapons[] = {}; 
         requiredVersion = 1; 

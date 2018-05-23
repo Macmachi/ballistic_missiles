@@ -45,12 +45,14 @@
 A faire lors de la version v1.1 :
 - Ajout du missile V2 [DONE]
 - ajout lanceur statique vertical statique pour le islanker [DONE]
-- ajout attach islanker ou spawn missile dans lanceur statique 
-- animation personnalisé pour le v2 quand sur lanceur (changement de lanceur)
-- Ajout d'un silo pour le islanker + animation perso pour missile + spawn missile + spawn silo lancé
-- Module pour désactiver les dégats ? 
+- ajout attach islanker avec spawn missile dans lanceur statique [EN COURS]  
+- Modification de la fonction d'animation pour lacher le missile si attaché? [?] 
+- ajout attach V2 avec spawn missile dans lanceur statique + detach [?] 
+- Détruction missile avec lod damage? + explosion [?]
 
 A faire lors de la version v1.2
 - Permet de lancer un missile via Zeus ?
+- Module pour désactiver les dégats ? 
 - Module de ciblage qui drop missile a 90 degré et le fait péter quand Z = 0?
-- Détruction missile avec lod damage? + explosion
+- Animation personnalisé pour le launcher du v2
+- Ajout d'un silo pour le islanker + animation perso pour missile + spawn missile + spawn silo lancé 

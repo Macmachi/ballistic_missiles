@@ -1,4 +1,4 @@
-allTILKBallisticMissiles[]={"shahab3","iskander_9K720","minuteman_2","iskander_launchpad1","v2","v2_launcher1"};//add the missile class names here if new
+allTILKBallisticMissiles[]={"shahab3","iskander_9K720","minuteman_2","iskander_launchpad1","v2","v2_launchpad1"};//add the missile class names here if new
 class Land_CampingChair_V2_F;
 class Wreck_base_F;
 
@@ -169,13 +169,13 @@ class iskander_launchpad1: LauncherPropBase_F {
 	};
 };	
 
-class v2_launcher1: LauncherPropBase_F {
+class v2_launchpad1: LauncherPropBase_F {
 	
-	editorPreview = "\Ballistic_missiles\media\icons\iskander_launchpad1_icon.paa";
+	editorPreview = "\Ballistic_missiles\media\icons\v2_launchpad1_icon.paa";
 	scope = 2; 
 	scopeCurator = 2; 
 	displayName = "V2 launchpad 1";
-	model = "\Ballistic_missiles\objects\v2_launcher1.p3d";
+	model = "\Ballistic_missiles\objects\v2_launchpad1.p3d";
 	icon = "iconObject_1x2";
     editorSubcategory = "EdSubcat_missiles_country_germany";
 	class EventHandlers {
