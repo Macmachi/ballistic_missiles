@@ -139,7 +139,7 @@ class minuteman_2: MissilePropBase_F {
 
 class v2: MissilePropBase_F {
 	
-	editorPreview = "\Ballistic_missiles\media\icons\iskander_launchpad1_icon.paa";
+	editorPreview = "\Ballistic_missiles\media\icons\v2_icon.paa";
 	scope = 2; 
 	scopeCurator = 2; 
 	displayName = "V2";
