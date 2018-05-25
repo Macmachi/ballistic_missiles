@@ -7,7 +7,6 @@ params ["_missile"];
 {
 	params ["_missile"];
 	
-	
 	_hasAce = false;
 	if ("ace_common" in activatedAddons) then {_hasAce = true};
 	_distance = player distance _missile;
@@ -27,7 +26,6 @@ params ["_missile"];
 
 
 }] RemoteExec ["Spawn",[0,-2] select isDedicated, false];
-
 
 _allNearEntities = (getPosATL _missile) nearEntities 100;
 _allNearObjects = nearestObjects [_missile, [], 100];

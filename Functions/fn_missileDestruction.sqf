@@ -1,6 +1,8 @@
 /*
 * this function allow the missile destruction
 */
+params ["_missile"];
+_missile setVariable ["TILK_missileDestruction",true,true];
 
 //explosion
 //null = createVehicle ["Bo_GBU12_LGB_MI10", _position,[], 0, "CAN_COLLIDE"];   
