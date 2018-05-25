@@ -43,7 +43,7 @@ class MissilePropBase_F : Land_CampingChair_V2_F {
 	class EventHandlers {
 		init = "_this call TILK_fnc_ignition;";
 		/*test*/
-		//killed = "_this call (deleteVehicle _this);";
+		//killed = "_this call TILK_fnc_missileDestruction;";
 		/* fin de test*/
 		class CBA_Extended_EventHandlers {};
 	};
