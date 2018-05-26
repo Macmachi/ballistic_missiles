@@ -156,12 +156,6 @@
 	[_missile] call TILK_fnc_setMissileDamages;
 	_PS4 setDropInterval 0.02;
 
-	/*AJOUTER CONDITION SI MISSILE ATTACHER alors detach!*/
-	if (count attachedObjects _missile == 1) then {
-		hint "detach du missile";
-		detach _missile;
-	};
-	
 	//animation starts here
 	//the following scope is executed in parallel
 	_missile setVelocity [0,0,10];
@@ -170,6 +164,11 @@
 		
 		//exponential increase of the velocity of the missile during 200 iterations
 		_startVelocity = 1;
+			/*AJOUTER CONDITION SI MISSILE ATTACHER alors detach!*/
+	     if (count attachedObjects _missile == 1) then {
+		hint "detach du missile";
+		detach _missile;
+	    };
 		for "_i" from 1 to 200 do 
 			{
 			_missile setVelocity [(vectorUp _missile select 0)*_i,(vectorUp _missile select 1) *_i,(vectorUp _missile select 2)*_i];
