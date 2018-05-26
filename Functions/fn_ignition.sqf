@@ -156,6 +156,12 @@
 	[_missile] call TILK_fnc_setMissileDamages;
 	_PS4 setDropInterval 0.02;
 
+	/*AJOUTER CONDITION SI MISSILE ATTACHER alors detach!*/
+	if (count attachedObjects _missile == 1) then {
+		hint "detach du missile";
+		detach _missile;
+	};
+	
 	//animation starts here
 	//the following scope is executed in parallel
 	_missile setVelocity [0,0,10];

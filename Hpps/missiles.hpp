@@ -1,4 +1,5 @@
-allTILKBallisticMissiles[]={"shahab3","iskander_9K720","minuteman_2","iskander_launchpad1","v2","v2_launchpad1"};//add the missile class names here if new
+allTILKBallisticMissiles[]={"shahab3","iskander_9K720","minuteman_2","v2"};//add the missile class names here if new
+allTILKLaunchPad[]={"v2_launchpad1","iskander_launchpad1"}; //add the launchpad class names here if new
 class Land_CampingChair_V2_F;
 class Wreck_base_F;
 
@@ -18,7 +19,7 @@ class MissilePropBase_F : Land_CampingChair_V2_F {
 	};
 	// Strategic
 	side = 3;
-	armor = 10;  //250 mis 10 pour test!!!!!!!!!!!!!!
+	armor = 1;  //250 mis 1 pour test!!!!!!!!!!!!!!
 	ladders[] = {};
 	// Building
 	//nameSound = "obj_building";
@@ -43,7 +44,7 @@ class MissilePropBase_F : Land_CampingChair_V2_F {
 	class EventHandlers {
 		init = "_this call TILK_fnc_ignition;";
 		/*test*/
-		//killed = "_this call TILK_fnc_missileDestruction;";
+		killed = "_this call TILK_fnc_missileDestruction;";
 		/* fin de test*/
 		class CBA_Extended_EventHandlers {};
 	};
