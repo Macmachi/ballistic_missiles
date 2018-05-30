@@ -44,7 +44,7 @@ class MissilePropBase_F : Land_CampingChair_V2_F {
 	class EventHandlers {
 		init = "_this call TILK_fnc_ignition;";
 		/*test*/
-		killed = "_this call TILK_fnc_missileDestruction;";
+		//killed = "_this call TILK_fnc_missileDestruction;"; // NON FONCTIONNEL A TESTER
 		/* fin de test*/
 		class CBA_Extended_EventHandlers {};
 	};
@@ -163,9 +163,9 @@ class iskander_launchpad1: LauncherPropBase_F {
 	icon = "iconObject_1x2";
     editorSubcategory = "EdSubcat_missiles_country_russia";
 	class EventHandlers {
-		/*test*/
-        init = "[this, 'iskander_9K720'] call TILK_fnc_launchpadAttach.sqf;";
-		/* fin de test*/
+		/*Test - Non fonctionel, donne un message d'erreur avec ";" missing */
+        //init = "[this, 'iskander_9K720'] call TILK_fnc_launchpadAttach.sqf;";
+		/* fin du test*/
 		class CBA_Extended_EventHandlers {};
 	};
 };	
@@ -180,7 +180,9 @@ class v2_launchpad1: LauncherPropBase_F {
 	icon = "iconObject_1x2";
     editorSubcategory = "EdSubcat_missiles_country_germany";
 	class EventHandlers {
-	//CODE ICI	
+		/*Test - Non fonctionel, donne un message d'erreur avec ";" missing */
+        //init = "[this, 'v2'] call TILK_fnc_launchpadAttach.sqf;";
+		/* fin du test*/
 		class CBA_Extended_EventHandlers {};
 	};	
 };

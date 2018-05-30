@@ -4,6 +4,7 @@
 params ["_launcher","_missile"];
 _missilespawn = _missile createVehicle (position _launcher);
 _launcher disableCollisionWith _missilespawn;
+_missilespawn disableCollisionWith _launcher;
 _selectPosMissile = _missilespawn selectionPosition "contactlauncher";
 _modelToWorldSelectPosMissile = _missilespawn modelToWorld _selectPosMissile;
 _offset = _selectPosMissile vectorMultiply -1;

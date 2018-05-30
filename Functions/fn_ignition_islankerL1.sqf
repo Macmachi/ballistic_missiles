@@ -1,6 +1,14 @@
 /*
 * generates particles and animates the missile (is mp compatible)
 */
+/*
+			/*AJOUTER CONDITION SI MISSILE ATTACHER alors detach!
+	     if (count attachedObjects _missile == 1) then {
+		hint "detach du missile";
+		detach _missile;
+	    };
+		*/
+
 
 0 = _this spawn {
 
@@ -37,7 +45,7 @@
 		3,
 		2,
 		1,
-		[6,6,6,0], 
+		[8,8,8,0], 
 		[[4, 5, 10, 10]],
 		[1,0.5],
 		1,
@@ -164,15 +172,10 @@
 		
 		//exponential increase of the velocity of the missile during 200 iterations
 		_startVelocity = 1;
-		
+
 		for "_i" from 1 to 200 do 
 			{
-				_missile setVelocity [(vectorUp _missile select 0)*_i,(vectorUp _missile select 1) *_i,(vectorUp _missile select 2)*_i];
-				//check if the missile is attached to a launcnpad and detach him
-				if (count attachedObjects _missile == 1 && _i == 10) then {
-					detach _missile;
-					_missile setPos (_missile modelToWorld [0,0,4]);
-				};
+			_missile setVelocity [(vectorUp _missile select 0)*_i,(vectorUp _missile select 1) *_i,(vectorUp _missile select 2)*_i];
 			sleep 0.1; //break
 			//hint format ["Loop %1 vel %2",str _i, str velocity _missile]; //debug
 			};
