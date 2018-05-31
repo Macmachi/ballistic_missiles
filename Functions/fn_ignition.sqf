@@ -178,12 +178,14 @@
 			{
 				_missile setVelocity [(vectorUp _missile select 0)*_i,(vectorUp _missile select 1) *_i,(vectorUp _missile select 2)*_i];
 				sleep 0.1; //break
+				/* COMMENTER car les launchers ne sont pas encore debug mais a tester ensuite sur dédié
 				//check if the missile is touching the ground, if yes, we detach him
 				if ((isTouchingGround _missile) && (_i == 10)) then
 				{		
 					detach _missile;
 					_missile setPos (_missile modelToWorld [0,0,4]);	
 				}; 
+				*/ // A DECOMMENTER JUSQU'ICI
 				//hint format ["Loop %1 vel %2",str _i, str velocity _missile]; //debug
 				
 			};
