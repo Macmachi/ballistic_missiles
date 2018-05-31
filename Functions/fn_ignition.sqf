@@ -12,16 +12,6 @@
 	
 	sleep 0.2;	// We wait to check if the missile is destroyed before play sound or create light
 	
-	if (!alive _missile) exitWith 
-		{
-		    sleep 3;
-			deleteVehicle _lightBooster;
-	    };
-	
-	//play the sound during takeoff if missile is alive!
-	playSound3D ["ballistic_missiles\media\sounds\missilelaunchsound.ogg", _missile, false, getPosASL _missile, 5, 1, 3000]; //can be heard up to 3kms 
-
-		
 	//add the position of the object's mem (reactor) in a variable
 	_emiterpos= _missile modelToWorld (_missile selectionPosition "reactor"); 
 
@@ -31,6 +21,15 @@
 	_lightBooster setLightAmbient [2.55, 1.02, 0.51]; 
 	_lightBooster setLightColor [2.55, 1.02, 0.51]; 
 	_lightBooster attachTo [_missile, [0, 0, 0], "reactor"];
+	
+	if (!alive _missile) exitWith 
+		{
+		    sleep 3;
+			deleteVehicle _lightBooster;
+	    };
+	
+	//play the sound during takeoff if missile is alive!
+	playSound3D ["ballistic_missiles\media\sounds\missilelaunchsound.ogg", _missile, false, getPosASL _missile, 5, 1, 3000]; //can be heard up to 3kms 
 	
 	//smoke particle (1) on ignition of thrusters
 	_PS1 = "#particlesource" createVehicleLocal _emiterpos;

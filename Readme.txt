@@ -56,7 +56,8 @@ Futurs ajouts de la version v1.2 :
 - Ajout du spawn du Islanker avec attachement dans lanceur statique [DONE] (need to be debug!) 
 - Ajout du spawn du V2 avec attachement dans lanceur statique [DONE] (need to be debug!) 
 - Modification de la fonction d'animation pour être compatible avec les lanceurs statiques [DONE] 
-- Attribuer une variable à un missile qui spawn sur un launcher 
+- Attribuer une variable à un missile qui spawn sur un launcher [?]
+- Effacer de l'interface un missile qui a été détruit [?]
 -----------------------------------------------------------------------
 Futurs ajouts de la version v1.3 :
 - Permettre de lancer un missile via Zeus ???
