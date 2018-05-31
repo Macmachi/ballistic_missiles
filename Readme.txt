@@ -49,7 +49,7 @@ Version 1.0 - First realease
 Version 1.1 :
 - Add V2 missile 
 - Missiles are now destructible but not targetable
-- Flame reduction during launch 
+- Flame size reduction during launch 
 -----------------------------------------------------------------------
 Futurs ajouts de la version v1.2 :
 - Ajout d'un lanceur statique vertical pour le islanker [DONE]
