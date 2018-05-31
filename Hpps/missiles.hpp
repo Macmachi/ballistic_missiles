@@ -19,7 +19,7 @@ class MissilePropBase_F : Land_CampingChair_V2_F {
 	};
 	// Strategic
 	side = 3;
-	armor = 1;  //250 mis 1 pour test!!!!!!!!!!!!!!
+	armor = 250;  
 	ladders[] = {};
 	// Building
 	//nameSound = "obj_building";
@@ -44,7 +44,7 @@ class MissilePropBase_F : Land_CampingChair_V2_F {
 	class EventHandlers {
 		init = "_this call TILK_fnc_ignition;";
 		/*test*/
-		//killed = "_this call TILK_fnc_missileDestruction;"; // NON FONCTIONNEL A TESTER
+		killed = "_this call TILK_fnc_missileDestruction;"; 
 		/* fin de test*/
 		class CBA_Extended_EventHandlers {};
 	};
@@ -156,8 +156,8 @@ class v2: MissilePropBase_F {
 class iskander_launchpad1: LauncherPropBase_F {
 	
 	editorPreview = "\Ballistic_missiles\media\icons\iskander_launchpad1_icon.paa";
-	scope = 2; 
-	scopeCurator = 2; 
+	scope = 1; // Désactiver car fonction d'attachement pas fonctionnelle !
+	scopeCurator = 1; // Désactiver car fonction d'attachement pas fonctionnelle !
 	displayName = "Iskander launchpad 1";
 	model = "\Ballistic_missiles\objects\iskander_launchpad1.p3d";
 	icon = "iconObject_1x2";
@@ -173,8 +173,8 @@ class iskander_launchpad1: LauncherPropBase_F {
 class v2_launchpad1: LauncherPropBase_F {
 	
 	editorPreview = "\Ballistic_missiles\media\icons\v2_launchpad1_icon.paa";
-	scope = 2; 
-	scopeCurator = 2; 
+	scope = 1; // Désactiver car fonction d'attachement pas fonctionnelle !
+	scopeCurator = 1; // Désactiver car fonction d'attachement pas fonctionnelle !
 	displayName = "V2 launchpad 1";
 	model = "\Ballistic_missiles\objects\v2_launchpad1.p3d";
 	icon = "iconObject_1x2";

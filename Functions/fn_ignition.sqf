@@ -7,10 +7,21 @@
 	_missile = _this select 0;
 
 	waitUntil {_missile getVariable ["TILK_MissileLaunch",false];};
-
-	//play the sound during takeoff
+	
+	[_missile] call TILK_fnc_setMissileDamages;
+	
+	sleep 0.2;	// We wait to check if the missile is destroyed before play sound or create light
+	
+	if (!alive _missile) exitWith 
+		{
+		    sleep 3;
+			deleteVehicle _lightBooster;
+	    };
+	
+	//play the sound during takeoff if missile is alive!
 	playSound3D ["ballistic_missiles\media\sounds\missilelaunchsound.ogg", _missile, false, getPosASL _missile, 5, 1, 3000]; //can be heard up to 3kms 
 
+		
 	//add the position of the object's mem (reactor) in a variable
 	_emiterpos= _missile modelToWorld (_missile selectionPosition "reactor"); 
 
@@ -20,7 +31,7 @@
 	_lightBooster setLightAmbient [2.55, 1.02, 0.51]; 
 	_lightBooster setLightColor [2.55, 1.02, 0.51]; 
 	_lightBooster attachTo [_missile, [0, 0, 0], "reactor"];
-
+	
 	//smoke particle (1) on ignition of thrusters
 	_PS1 = "#particlesource" createVehicleLocal _emiterpos;
 	_PS1 setParticleCircle [0, [0, 0, 0]];
@@ -153,7 +164,6 @@
 	sleep 1; //break 
 		
 	deleteVehicle _PS1; //delete smoked particle (number 1) on ignition of thrusters
-	[_missile] call TILK_fnc_setMissileDamages;
 	_PS4 setDropInterval 0.02;
 
 	//animation starts here
@@ -168,13 +178,15 @@
 		for "_i" from 1 to 200 do 
 			{
 				_missile setVelocity [(vectorUp _missile select 0)*_i,(vectorUp _missile select 1) *_i,(vectorUp _missile select 2)*_i];
-				//check if the missile is attached to a launcnpad and detach him
-				if (count attachedObjects _missile == 1 && _i == 10) then {
+				sleep 0.1; //break
+				//check if the missile is touching the ground, if yes, we detach him
+				if ((isTouchingGround _missile) && (_i == 10)) then
+				{		
 					detach _missile;
-					_missile setPos (_missile modelToWorld [0,0,4]);
-				};
-			sleep 0.1; //break
-			//hint format ["Loop %1 vel %2",str _i, str velocity _missile]; //debug
+					_missile setPos (_missile modelToWorld [0,0,4]);	
+				}; 
+				//hint format ["Loop %1 vel %2",str _i, str velocity _missile]; //debug
+				
 			};
 		
 		sleep 39; //break

@@ -41,18 +41,28 @@
 [Acknowledgements]
 -----------------------------------------------------------------------
 - Many thanks to the TGV team !
-
-A faire lors de la version v1.1 :
-- Ajout du missile V2 [DONE]
-- ajout lanceur statique vertical statique pour le islanker [DONE]
-- ajout attach islanker avec spawn missile dans lanceur statique [DONE]  
-- Modification de la fonction d'animation pour lacher le missile si attaché? [DONE] 
-- ajout attach V2 avec spawn missile dans lanceur statique + detach [DONE] 
-
-A faire lors de la version v1.2
-- Détruction missile avec lod damage? + explosion [?]
-- Permet de lancer un missile via Zeus ?
-- Module pour désactiver les dégats ? 
-- Module de ciblage qui drop missile a 90 degré et le fait péter quand Z = 0?
-- Animation personnalisé pour le launcher du v2
-- Ajout d'un silo pour le islanker + animation perso pour missile + spawn missile + spawn silo lancé 
+-----------------------------------------------------------------------
+//////////////// RELEASES \\\\\\\\\\\\\\\
+-----------------------------------------------------------------------
+Version 1.0 - First realease 
+-----------------------------------------------------------------------
+Version 1.1 :
+- Add V2 missile 
+- Missiles are now destructible but not targetable
+- Flame reduction during launch 
+-----------------------------------------------------------------------
+Futurs ajouts de la version v1.2 :
+- Ajout d'un lanceur statique vertical pour le islanker [DONE]
+- Ajout du spawn du Islanker avec attachement dans lanceur statique [DONE] (need to be debug!) 
+- Ajout du spawn du V2 avec attachement dans lanceur statique [DONE] (need to be debug!) 
+- Modification de la fonction d'animation pour être compatible avec les lanceurs statiques [DONE] 
+- Attribuer une variable à un missile qui spawn sur un launcher 
+-----------------------------------------------------------------------
+Futurs ajouts de la version v1.3 :
+- Permettre de lancer un missile via Zeus ???
+- Module de ciblage qui drop missile a 90 degré et le fait péter quand Z = 0 ???
+-----------------------------------------------------------------------
+Ideas for the future :
+- Ajout de nouveaux missiles
+- Animation blender pour le launcher statique du v2
+- Ajout d'un silo pour islanker avec animation + spawn du missile
