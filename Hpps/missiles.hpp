@@ -55,6 +55,7 @@ class MissilePropBase_F : Land_CampingChair_V2_F {
 class LauncherPropBase_F: Wreck_base_F {
 	author = "TILK";
 	mapSize = 4;
+	
 	class SimpleObject {
 		eden = 0;
 		animate[] = {};
@@ -66,10 +67,11 @@ class LauncherPropBase_F: Wreck_base_F {
 	scope = 0;
 	scopeCurator = 0;
 	icon = "iconObject_1x2";
-    editorCategory = "EdCat_missiles";
+	editorCategory = "EdCat_missiles";
 	destrType = "DestructBuilding";
 	cost = 0;
 	accuracy = 1000;
+	
 	class AttributeValues {
 		objectIsSimple = 0;
 	};
@@ -84,6 +86,7 @@ class LauncherPropBase_F: Wreck_base_F {
 	hasDriver = 0;
 	audible = 0;
 	//simulation = "house";
+	
 	class DestructionEffects {};
 	picture = "pictureStaticObject";
 	weapons[] = {};
@@ -98,6 +101,7 @@ class LauncherPropBase_F: Wreck_base_F {
 	windSockExist = 0;
 	countsForScoreboard = 0;
 };
+
 
 // MISSILES
 
